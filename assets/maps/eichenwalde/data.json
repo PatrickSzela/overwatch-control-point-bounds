@@ -1,0 +1,17 @@
+{
+  "name": "Eichenwalde",
+  "type": "hybrid",
+  "points": {
+    "point_a": {
+      "name": "Point A",
+      "src": "point_a",
+      "sides": {
+        "top": {
+          "name": "Top view",
+          "src": "top",
+          "details": []
+        }
+      }
+    }
+  }
+}

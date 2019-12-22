@@ -1,0 +1,30 @@
+{
+  "name": "King's Row",
+  "type": "hybrid",
+  "points": {
+    "point_a": {
+      "name": "Point A",
+      "src": "point_a",
+      "sides": {
+        "top": {
+          "name": "Top view",
+          "src": "top",
+          "details": [
+            {
+              "position": { "x": 300, "y": 300 },
+              "contestable": true,
+              "difficulty": 2,
+              "description": "It's possible to contest the point when standing on the edge of this telephone booth"
+            },
+            {
+              "position": { "x": 1430, "y": 400 },
+              "contestable": true,
+              "difficulty": 1,
+              "description": "You can contest the point when standing on the hood of the car"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "name": "Busan",
+  "type": "control",
+  "points": {
+    "downtown": {
+      "name": "Downtown",
+      "src": "downtown",
+      "sides": {
+        "top": {
+          "name": "Top view",
+          "src": "top",
+          "details": [
+            {
+              "position": { "x": 960, "y": 950 },
+              "contestable": true,
+              "difficulty": 0
+            }
+          ]
+        }
+      }
+    },
+    "meka_base": {
+      "name": "Meka Base",
+      "src": "meka_base",
+      "sides": {
+        "top": {
+          "name": "Top view",
+          "src": "top",
+          "details": []
+        }
+      }
+    },
+    "sanctuary": {
+      "name": "Sanctuary",
+      "src": "sanctuary",
+      "sides": {
+        "top": {
+          "name": "Top view",
+          "src": "top",
+          "details": [
+            {
+              "position": { "x": 960, "y": 420 },
+              "contestable": true,
+              "difficulty": 0
+            }
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "name": "Numbani",
+  "type": "hybrid",
+  "points": {
+    "point_a": {
+      "name": "Point A",
+      "src": "point_a",
+      "sides": {
+        "top": {
+          "name": "Top view",
+          "src": "top",
+          "details": [
+            {
+              "position": { "x": 410, "y": 50 },
+              "contestable": false,
+              "difficulty": 0,
+              "description": "It's not possible to contest the point while standing in the bushes"
+            },
+            {
+              "position": { "x": 610, "y": 50 },
+              "contestable": false,
+              "difficulty": 0,
+              "description": "It's not possible to contest the point while standing in the bushes"
+            },
+            {
+              "position": { "x": 1250, "y": 50 },
+              "contestable": false,
+              "difficulty": 0,
+              "description": "It's not possible to contest the point while standing in the bushes"
+            },
+            {
+              "position": { "x": 1460, "y": 50 },
+              "contestable": false,
+              "difficulty": 0,
+              "description": "It's not possible to contest the point while standing in the bushes"
+            },
+            {
+              "position": { "x": 1600, "y": 330 },
+              "contestable": false,
+              "difficulty": 0,
+              "description": "When standing right next to this wall it's impossible to contest the point"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

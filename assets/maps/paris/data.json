@@ -1,0 +1,35 @@
+{
+  "name": "Paris",
+  "type": "assault",
+  "points": {
+    "point_a": {
+      "name": "Point A",
+      "src": "point_a",
+      "sides": {
+        "top": {
+          "name": "Top view",
+          "src": "top",
+          "details": [
+            {
+              "position": { "x": 350, "y": 500 },
+              "contestable": true,
+              "difficulty": 2,
+              "description": "It's possible to contest the point when standing on the edge of this sign (or on the bench)"
+            }
+          ]
+        }
+      }
+    },
+    "point_b": {
+      "name": "Point B",
+      "src": "point_b",
+      "sides": {
+        "top": {
+          "name": "Top view",
+          "src": "top",
+          "details": []
+        }
+      }
+    }
+  }
+}

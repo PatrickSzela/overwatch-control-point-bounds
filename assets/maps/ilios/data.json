@@ -1,0 +1,127 @@
+{
+  "name": "Ilios",
+  "type": "control",
+  "points": {
+    "lighthouse": {
+      "name": "Lighthouse",
+      "src": "lighthouse",
+      "sides": {
+        "left": {
+          "name": "Left side",
+          "src": "left",
+          "details": []
+        },
+        "right": {
+          "name": "Right side",
+          "src": "right",
+          "details": []
+        }
+      }
+    },
+    "ruins": {
+      "name": "Ruins",
+      "src": "ruins",
+      "sides": {
+        "top": {
+          "name": "Top view",
+          "src": "top",
+          "details": [
+            {
+              "position": { "x": 500, "y": 160 },
+              "contestable": true,
+              "difficulty": 2
+            },
+            {
+              "position": { "x": 530, "y": 90 },
+              "contestable": true,
+              "difficulty": 3,
+              "description": "It's possible to contest the point when standing on the edge of this wall"
+            },
+            {
+              "position": { "x": 960, "y": 90 },
+              "contestable": true,
+              "difficulty": 3,
+              "description": "It's possible to contest the point when standing on the edge of this metal plate"
+            },
+            {
+              "position": { "x": 1370, "y": 90 },
+              "contestable": true,
+              "difficulty": 3,
+              "description": "It's possible to contest the point when standing on the edge of this wall"
+            },
+            {
+              "position": { "x": 1420, "y": 160 },
+              "contestable": true,
+              "difficulty": 2
+            },
+            {
+              "position": { "x": 1530, "y": 680 },
+              "contestable": true,
+              "difficulty": 2,
+              "description": "It's possible to contest the point when standing on the edge of this metal plate (easier from this side)"
+            },
+            {
+              "position": { "x": 375, "y": 680 },
+              "contestable": true,
+              "difficulty": 3,
+              "description": "It's possible to contest the point when standing on the edge of this metal plate (harder from this side)"
+            },
+            {
+              "position": { "x": 960, "y": 960 },
+              "contestable": true,
+              "difficulty": 0
+            },
+            {
+              "position": { "x": 730, "y": 1000 },
+              "contestable": true,
+              "difficulty": 3,
+              "description": "It's possible to contest the point when standing on the edge of this metal plate"
+            },
+            {
+              "position": { "x": 1200, "y": 1000 },
+              "contestable": true,
+              "difficulty": 3,
+              "description": "It's possible to contest the point when standing on the edge of this metal plate"
+            }
+          ]
+        }
+      }
+    },
+    "well": {
+      "name": "Well",
+      "src": "well",
+      "sides": {
+        "top": {
+          "name": "Top view",
+          "src": "top",
+          "details": [
+            {
+              "position": { "x": 1550, "y": 200 },
+              "contestable": false,
+              "difficulty": 0,
+              "description": "Smaller heroes might not be able to contest the point when standing next to this wall, even though it's possible from the other side"
+            },
+            {
+              "position": { "x": 1555, "y": 370 },
+              "contestable": false,
+              "difficulty": 0,
+              "description": "Smaller heroes might not be able to contest the point when standing next to this wall, even though it's possible from the other side"
+            },
+            {
+              "position": { "x": 700, "y": 980 },
+              "contestable": false,
+              "difficulty": 0,
+              "description": "Smaller heroes might not be able to contest the point when standing next to this wall"
+            },
+            {
+              "position": { "x": 1180, "y": 980 },
+              "contestable": false,
+              "difficulty": 0,
+              "description": "Smaller heroes might not be able to contest the point when standing next to this wall"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "name": "Lijiang Tower",
+  "type": "control",
+  "points": {
+    "control_center": {
+      "name": "Control Center",
+      "src": "control_center",
+      "sides": {
+        "top": {
+          "name": "Top view",
+          "src": "top",
+          "details": [
+            {
+              "position": { "x": 460, "y": 280 },
+              "contestable": true,
+              "difficulty": 2,
+              "description": "It's possible to contest the point when standing on this screen (check the Custom Game for precise bounds)"
+            },
+            {
+              "position": { "x": 1460, "y": 280 },
+              "contestable": true,
+              "difficulty": 2,
+              "description": "It's possible to contest the point when standing on this screen (check the Custom Game for precise bounds)"
+            }
+          ]
+        }
+      }
+    },
+    "garden": {
+      "name": "Garden",
+      "src": "garden",
+      "sides": {
+        "left": {
+          "name": "Left side",
+          "src": "left",
+          "details": [
+            {
+              "position": { "x": 960, "y": 90 },
+              "contestable": true,
+              "difficulty": 2,
+              "description": "You can contest the point from the when standing on the edge of the window (and it's easier from this side)"
+            }
+          ]
+        },
+        "right": {
+          "name": "Right side",
+          "src": "right",
+          "details": [
+            {
+              "position": { "x": 960, "y": 100 },
+              "contestable": true,
+              "difficulty": 3,
+              "description": "You can contest the point from the when standing on the edge of the window (and it's harder from this side)"
+            }
+          ]
+        }
+      }
+    },
+    "night_market": {
+      "name": "Night Market",
+      "src": "night_market",
+      "sides": {
+        "top": {
+          "name": "Top view",
+          "src": "top",
+          "details": [
+            {
+              "position": { "x": 460, "y": 880 },
+              "contestable": false,
+              "difficulty": 0,
+              "description": "Smaller heroes might not be able to contest the point when standing next to this wall, even though it's possible from the other side"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

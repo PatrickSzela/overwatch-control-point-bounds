@@ -1,0 +1,24 @@
+{
+  "name": "Blizzard World",
+  "type": "hybrid",
+  "points": {
+    "point_a": {
+      "name": "Point A",
+      "src": "point_a",
+      "sides": {
+        "top": {
+          "name": "Top view",
+          "src": "top",
+          "details": [
+            {
+              "position": { "x": 960, "y": 120 },
+              "contestable": true,
+              "difficulty": 0,
+              "description": "It's possible to contest the point in every place under the roof"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

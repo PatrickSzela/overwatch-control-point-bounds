@@ -1,0 +1,519 @@
+@import '@/assets/scss/variables.scss';
+@import '@/assets/scss/mixins.scss';
+@import '@material/animation/functions';
+@import 'material-components-vue/dist/layout-grid/styles';
+@import 'material-components-vue/dist/card/styles';
+@import 'material-components-vue/dist/typography/styles';
+@import 'material-components-vue/dist/button/styles';
+@import 'material-components-vue/dist/list/styles';
+@import 'material-components-vue/dist/menu/styles';
+@import 'material-components-vue/dist/icon-button/styles';
+@import 'material-components-vue/dist/select/styles';
+@import 'material-components-vue/dist/snackbar/styles';
+
+html {
+  @include mdc-typography-base;
+  min-width: 320px;
+  overflow-y: scroll;
+  overflow-x: hidden; // IE11 & Edge fix
+  //scroll-behavior: smooth;
+  text-size-adjust: 100%;
+  height: 100%; // for the footer at bottom to work properly every parent needs to have 100% height
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  color: $mdc-theme-on-surface;
+  height: 100%;
+
+  &::before {
+    @include webp($background-image); // webp version of background is only 17kB, no need to preaload it or anything
+    background-color: $background-color;
+    content: '';
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 100vh;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center top;
+    z-index: -1;
+  }
+}
+
+h1 {
+  @include mdc-typography('headline1');
+  @include headline-media-sizes('headline1');
+}
+
+h2 {
+  @include mdc-typography('headline2');
+  @include headline-media-sizes('headline2');
+}
+
+h3 {
+  @include mdc-typography('headline3');
+  @include headline-media-sizes('headline3');
+}
+
+h4 {
+  @include mdc-typography('headline4');
+  @include headline-media-sizes('headline4');
+}
+
+h5 {
+  @include mdc-typography('headline5');
+  @include headline-media-sizes('headline5');
+}
+
+h6 {
+  @include mdc-typography('headline6');
+  @include headline-media-sizes('headline6');
+}
+
+p {
+  @include mdc-typography('body2');
+}
+
+a {
+  text-decoration: none;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:not(.mdc-card__interactive-container):not(.mdc-button) {
+    color: $mdc-theme-primary;
+    font-weight: 500;
+
+    &:hover,
+    &:focus,
+    &:active {
+      text-decoration: underline;
+    }
+  }
+}
+
+iframe {
+  border: none;
+}
+
+#__nuxt,
+#__layout {
+  height: 100%;
+}
+
+.layout {
+  //min-height: 100vh;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+noscript {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  .mdc-card {
+    max-width: 650px;
+    margin: 36px;
+
+    h2 {
+      padding: 24px 24px 0;
+      margin-top: 0;
+      margin-bottom: calc(#{$text-uppercase-margin-bottom} + 12px);
+    }
+
+    h6 {
+      @include mdc-typography('subtitle2');
+      padding: 0 24px 24px;
+      margin-top: 0;
+      margin-bottom: $text-uppercase-margin-bottom;
+    }
+  }
+}
+
+.layout-enter-active,
+.page-enter-active {
+  transition: mdc-animation-enter(opacity, 250ms);
+}
+
+.layout-leave-active,
+.page-leave-active {
+  transition: mdc-animation-exit-permanent(opacity, 150ms);
+}
+
+.layout-enter,
+.layout-leave-to,
+.page-enter,
+.page-leave-to {
+  opacity: 0;
+}
+
+.fade--dialog-enter-active {
+  transition: mdc-animation-enter(opacity, 150ms);
+}
+
+.fade--dialog-leave-active {
+  transition: mdc-animation-exit-permanent(opacity, 75ms);
+}
+
+.fade--dialog-enter,
+.fade--dialog-leave-to {
+  opacity: 0;
+}
+
+.fade--card-group-enter-active {
+  transition: mdc-animation-enter(opacity, 150ms, 75ms), mdc-animation-enter(transform, 150ms, 75ms);
+}
+
+.fade--card-group-leave-active {
+  transition: mdc-animation-exit-permanent(opacity, 75ms), mdc-animation-exit-permanent(transform, 75ms);
+}
+
+.fade--card-group-enter,
+.fade--card-group-leave-to {
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+.mdc-layout-grid {
+  width: 100%;
+
+  &__inner {
+    width: 100%; // to deal with max-width, margin and stretching
+    margin: 0 auto;
+    //max-width: $max-width;
+  }
+
+  &__cell > {
+    *:first-child {
+      margin-top: 0;
+    }
+
+    *:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.mdc-card {
+  @include mdc-elevation(6);
+
+  &--interactive {
+    @include interactive-border;
+    transition: transform 0.15s;
+    //overflow: hidden; // "fix" img being 1px too wide
+
+    // fix shaking etc
+    //backface-visibility: hidden;  // greatly reduces performance in Firefox Preview on Android
+    transform: translateZ(0) scale(1);
+
+    &::before {
+      @include mdc-elevation(6);
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      //border-radius: 0; // fix scaling issue when border-radius is set
+      transform: translateZ(0) scale(1.0375);
+
+      @include mdc-layout-grid-media-query_('tablet') {
+        transform: translateZ(0) scale(1.075);
+      }
+      @include mdc-layout-grid-media-query_('desktop') {
+        transform: translateZ(0) scale(1.125);
+      }
+    }
+  }
+
+  &__primary + &__secondary {
+    padding-top: 0 !important;
+  }
+
+  &__secondary + &__actions {
+    margin-top: -8px !important;
+  }
+
+  &__media {
+    &--4-3::before {
+      margin-bottom: 3 / 4 * 100%;
+    }
+
+    &--21-9::before {
+      margin-bottom: 9 / 21 * 100%;
+    }
+
+    &--32-9::before {
+      margin-bottom: 9 / 32 * 100%;
+    }
+
+    h3 {
+      @include text-primary-centered;
+      text-align: center;
+      color: white;
+      position: absolute;
+      right: 0.5em;
+      bottom: 0.325em;
+      left: 0.5em;
+      text-shadow: 1px 3px 5px rgba(0, 0, 0, 0.5);
+      margin-top: 0;
+      margin-bottom: $text-uppercase-margin-bottom;
+      user-select: none; // is not inherited from .mdc-card--interactive in Firefox
+
+      @include mdc-layout-grid-media-query_('phone') {
+        font-size: 2.25em;
+      }
+    }
+  }
+
+  &__interactive-container {
+    color: inherit; // fix for when card is inside of <a> tag
+    user-select: none;
+
+    &:focus {
+      .mdc-card--interactive {
+        @extend .mdc-card--interactive:focus;
+      }
+    }
+
+    &:active {
+      .mdc-card--interactive {
+        @extend .mdc-card--interactive:active;
+      }
+    }
+  }
+}
+
+.mdc-button {
+  @include interactive-border(2px, 3px);
+  @include mdc-button-container-fill-color(rgba(155, 157, 162, 0.3));
+  @include mdc-button-ink-color($mdc-theme-on-surface);
+  @include mdc-button-outline-color(white);
+  @include mdc-states-base-color(white);
+  overflow: visible;
+  transition: background 75ms linear, color 75ms linear;
+
+  &::before {
+    width: auto;
+    height: auto;
+  }
+
+  &::after {
+    width: auto;
+    height: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: inherit;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    @include mdc-button-container-fill-color($mdc-theme-primary);
+    @include mdc-button-ink-color($mdc-theme-on-primary);
+    outline: none; // remove dotted outline in Firefox
+  }
+
+  &:hover,
+  &:focus {
+    &::after {
+      opacity: 0.14;
+    }
+  }
+
+  .radio-button input:focus + & {
+    @extend .mdc-button:hover;
+  }
+
+  .radio-button input:focus + &--secondary {
+    @extend .mdc-button--secondary:hover;
+  }
+
+  &--raised {
+    @include mdc-button-container-fill-color($mdc-theme-primary);
+    @include mdc-button-ink-color($mdc-theme-on-primary);
+    box-shadow: none !important;
+  }
+
+  &--outlined {
+    @include mdc-button-container-fill-color(rgba(0, 0, 0, 0.35));
+    @include mdc-button-ink-color(white);
+    @include mdc-states-base-color(rgba(0, 0, 0, 0.35));
+    border: none;
+    opacity: 0.5;
+    transition: opacity 150ms linear;
+
+    &::before {
+      opacity: 0.5;
+      background: none;
+    }
+    &::before,
+    &::after {
+      z-index: -1;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      opacity: 1;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      @include mdc-button-container-fill-color(rgba(0, 0, 0, 0.35));
+      @include mdc-button-ink-color(white);
+    }
+  }
+
+  &--secondary {
+    &.mdc-button--raised {
+      @include mdc-button-container-fill-color($mdc-theme-secondary);
+      @include mdc-button-ink-color($mdc-theme-on-secondary);
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      @include mdc-button-container-fill-color($mdc-theme-secondary);
+      @include mdc-button-ink-color($mdc-theme-on-secondary);
+    }
+  }
+
+  &__label {
+    margin-bottom: $text-uppercase-margin-bottom;
+    z-index: 2; // fix ::after covering the label
+    text-decoration: none !important;
+  }
+}
+
+.mdc-menu {
+  transform: none !important;
+
+  &-surface {
+    @include mdc-menu-surface-fill-color($mdc-theme-surface-secondary);
+    //transform: none !important;
+  }
+
+  .mdc-list .mdc-list-item {
+    @include mdc-states-base-color(white);
+    @include mdc-list-item-primary-text-ink-color(white);
+  }
+}
+
+.mdc-list {
+  @include mdc-typography('subtitle2');
+  padding: 0;
+  margin: 0;
+
+  .mdc-list-item {
+    height: $mdc-list-single-line-height; // variable doesn't get applied, no idea why
+
+    &__text {
+      margin-bottom: $text-uppercase-margin-bottom;
+    }
+  }
+}
+
+/*.mdc-list-item[data-value=''] {
+  display: none !important;
+}*/
+
+.mdc-select {
+  @include mdc-select-container-fill-color($mdc-theme-surface-secondary);
+  @include mdc-states-base-color(white);
+
+  display: block;
+  border-radius: 0;
+  transition: background 75ms linear;
+  height: auto;
+
+  &::before,
+  &::after {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 0;
+    transform: none !important;
+  }
+
+  &--disabled {
+    .mdc-select__dropdown-icon,
+    .mdc-select__selected-text {
+      opacity: 0.5;
+    }
+  }
+
+  &__selected-text {
+    padding: 8px;
+    border: none !important;
+    margin: 0;
+    display: inline-flex;
+    align-items: center;
+    height: calc(100% + -1 * #{$text-uppercase-margin-bottom});
+    transition: color 75ms linear;
+  }
+
+  &__dropdown-icon {
+    transform: translateY(-50%) !important;
+    top: 50%;
+
+    .mdc-select--focused & {
+      @include mdc-select-dd-arrow-svg-bg_(#ffffff, 1);
+    }
+  }
+}
+
+.mdc-icon-button {
+  //@include mdc-icon-button-disabled-ink-color(rgba(255, 255, 255, 0.5));
+
+  &:disabled {
+    opacity: 0.5;
+  }
+}
+
+.mdc-snackbar {
+  &__label {
+    text-transform: none;
+  }
+
+  &__actions {
+    color: white;
+    align-self: flex-start;
+    margin: 4px 4px 4px 0;
+  }
+
+  .mdc-icon-button {
+    @include mdc-states-base-color(white);
+  }
+}
+
+// VueCompareImages
+.vci-slider {
+  z-index: 3;
+
+  .line,
+  .handle {
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.5) !important;
+  }
+
+  .handle {
+    background: rgba(0, 0, 0, 0.25);
+  }
+}

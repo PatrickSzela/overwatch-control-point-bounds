@@ -1,0 +1,90 @@
+{
+  "name": "Oasis",
+  "type": "control",
+  "points": {
+    "city_center": {
+      "name": "City Center",
+      "src": "city_center",
+      "sides": {
+        "top": {
+          "name": "Top view",
+          "src": "top",
+          "details": [
+            {
+              "position": { "x": 960, "y": 450 },
+              "contestable": false,
+              "difficulty": 0,
+              "description": "It's not possible to contest the point when standing on the roof of this building"
+            }
+          ]
+        }
+      }
+    },
+    "gardens": {
+      "name": "Gardens",
+      "src": "gardens",
+      "sides": {
+        "top": {
+          "name": "Top view",
+          "src": "top",
+          "details": [
+            {
+              "position": { "x": 420, "y": 140 },
+              "contestable": false,
+              "difficulty": 0,
+              "description": "Smaller heroes might not be able to contest the point when standing next to this wall (although they can from the other side)"
+            },
+            {
+              "position": { "x": 400, "y": 400 },
+              "contestable": false,
+              "difficulty": 0,
+              "description": "Smaller heroes might not be able to contest the point when standing next to this wall (although they can from the other side)"
+            },
+            {
+              "position": { "x": 380, "y": 680 },
+              "contestable": false,
+              "difficulty": 0,
+              "description": "Smaller heroes might not be able to contest the point when standing next to this wall (although they can from the other side)"
+            },
+            {
+              "position": { "x": 360, "y": 980 },
+              "contestable": false,
+              "difficulty": 0,
+              "description": "Smaller heroes might not be able to contest the point when standing next to this wall (although they can from the other side)"
+            },
+            {
+              "position": { "x": 960, "y": 400 },
+              "contestable": false,
+              "difficulty": 0,
+              "description": "When standing on this \"footbridge\" it's not possible to contest the point. For precise boundries under it check the Custom Game"
+            },
+            {
+              "position": { "x": 960, "y": 1000 },
+              "contestable": true,
+              "difficulty": 1,
+              "description": "It's possible to contest the point when standing on this flowerpot"
+            }
+          ]
+        }
+      }
+    },
+    "university": {
+      "name": "University",
+      "src": "university",
+      "sides": {
+        "top": {
+          "name": "Top view",
+          "src": "top",
+          "details": [
+            {
+              "position": { "x": 960, "y": 80 },
+              "contestable": false,
+              "difficulty": 0,
+              "description": "Smaller heroes might not be able to contest the point when standing next to this wall"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

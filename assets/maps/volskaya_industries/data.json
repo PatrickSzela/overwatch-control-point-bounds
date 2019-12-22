@@ -1,0 +1,60 @@
+{
+  "name": "Volskaya Industries",
+  "type": "assault",
+  "points": {
+    "point_a": {
+      "name": "Point A",
+      "src": "point_a",
+      "sides": {
+        "top": {
+          "name": "Top view",
+          "src": "top",
+          "details": []
+        }
+      }
+    },
+    "point_b": {
+      "name": "Point B",
+      "src": "point_b",
+      "sides": {
+        "back": {
+          "name": "Back side",
+          "src": "back",
+          "details": [
+            {
+              "position": { "x": 1610, "y": 390 },
+              "contestable": true,
+              "difficulty": 3,
+              "description": "It's possible to contest the point when standing on the edge of this wall"
+            },
+            {
+              "position": { "x": 800, "y": 200 },
+              "contestable": false,
+              "difficulty": 0
+            },
+            {
+              "position": { "x": 220, "y": 140 },
+              "contestable": false,
+              "difficulty": 0
+            },
+            {
+              "position": { "x": 1280, "y": 140 },
+              "contestable": false,
+              "difficulty": 0
+            },
+            {
+              "position": { "x": 1520, "y": 800 },
+              "contestable": false,
+              "difficulty": 0
+            }
+          ]
+        },
+        "front": {
+          "name": "Front side",
+          "src": "front",
+          "details": []
+        }
+      }
+    }
+  }
+}

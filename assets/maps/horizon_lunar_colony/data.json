@@ -1,0 +1,35 @@
+{
+  "name": "Horizon Lunar Colony",
+  "type": "assault",
+  "points": {
+    "point_a": {
+      "name": "Point A",
+      "src": "point_a",
+      "sides": {
+        "top": {
+          "name": "Top view",
+          "src": "top",
+          "details": [
+            {
+              "position": { "x": 705, "y": 990 },
+              "contestable": false,
+              "difficulty": 3,
+              "description": "Very small spot on which you can't contest the point"
+            }
+          ]
+        }
+      }
+    },
+    "point_b": {
+      "name": "Point B",
+      "src": "point_b",
+      "sides": {
+        "top": {
+          "name": "Top view",
+          "src": "top",
+          "details": []
+        }
+      }
+    }
+  }
+}

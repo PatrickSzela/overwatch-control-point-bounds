@@ -1,0 +1,101 @@
+{
+  "name": "Hanamura",
+  "type": "assault",
+  "points": {
+    "point_a": {
+      "name": "Point A",
+      "src": "point_a",
+      "sides": {
+        "left": {
+          "name": "Left side",
+          "src": "left",
+          "details": [
+            {
+              "position": { "x": 940, "y": 150 },
+              "contestable": true,
+              "difficulty": 1,
+              "description": "You can easily contest the point from this window"
+            }
+          ]
+        },
+        "right": {
+          "name": "Right side",
+          "src": "right",
+          "details": []
+        }
+      }
+    },
+    "point_b": {
+      "name": "Point B",
+      "src": "point_b",
+      "sides": {
+        "front": {
+          "name": "Front side",
+          "src": "front",
+          "details": [
+            {
+              "position": { "x": 500, "y": 110 },
+              "contestable": true,
+              "difficulty": 3,
+              "description": "It's possible to contest the point when standing on the lantern"
+            },
+            {
+              "position": { "x": 1440, "y": 110 },
+              "contestable": true,
+              "difficulty": 3,
+              "description": "It's possible to contest the point when standing on the lantern"
+            }
+          ]
+        },
+        "back": {
+          "name": "Back side",
+          "src": "back",
+          "details": [
+            {
+              "position": { "x": 205, "y": 300 },
+              "contestable": true,
+              "difficulty": 2,
+              "description": "It's possible to contest the point when standing on this edge"
+            },
+            {
+              "position": { "x": 250, "y": 750 },
+              "contestable": true,
+              "difficulty": 2,
+              "description": "It's possible to contest the point when standing on the edge of these stairs"
+            },
+            {
+              "position": { "x": 1740, "y": 300 },
+              "contestable": true,
+              "difficulty": 2,
+              "description": "It's possible to contest the point when standing on this edge"
+            },
+            {
+              "position": { "x": 1700, "y": 750 },
+              "contestable": true,
+              "difficulty": 2,
+              "description": "It's possible to contest the point when standing on the edge of these stairs"
+            },
+            {
+              "position": { "x": 450, "y": 115 },
+              "contestable": true,
+              "difficulty": 3,
+              "description": "It's possible to contest the point when standing on this edge"
+            },
+            {
+              "position": { "x": 1500, "y": 115 },
+              "contestable": true,
+              "difficulty": 3,
+              "description": "It's possible to contest the point when standing on this edge"
+            },
+            {
+              "position": { "x": 1610, "y": 600 },
+              "contestable": false,
+              "difficulty": 0,
+              "description": "Smaller heroes might not be able to contest the point when standing right next to these stairs (only from this side)"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
