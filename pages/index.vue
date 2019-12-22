@@ -28,7 +28,7 @@ export default Vue.extend({
       cards: [
         {
           title: 'Compare',
-          subtitle: 'Compare ingame bounds with an actual ones. 15 maps to choose.',
+          subtitle: 'Compare ingame bounds with more accurate ones. 15 maps to choose.',
           icon: 'compare',
           link: '/select_map',
           color: '#186ad3'
