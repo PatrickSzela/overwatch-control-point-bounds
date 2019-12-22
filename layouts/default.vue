@@ -152,8 +152,8 @@ export default Vue.extend({
 }
 
 .easter-egg {
-  background-repeat: repeat;
-  background-size: auto;
+  background-repeat: repeat !important;
+  background-size: auto !important;
 
   &:before {
     content: '';
