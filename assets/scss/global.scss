@@ -5,8 +5,6 @@
 @import 'material-components-vue/dist/card/styles';
 @import 'material-components-vue/dist/typography/styles';
 @import 'material-components-vue/dist/button/styles';
-@import 'material-components-vue/dist/list/styles';
-@import 'material-components-vue/dist/menu/styles';
 @import 'material-components-vue/dist/icon-button/styles';
 @import 'material-components-vue/dist/select/styles';
 @import 'material-components-vue/dist/snackbar/styles';
@@ -16,9 +14,8 @@ html {
   min-width: 320px;
   overflow-y: scroll;
   overflow-x: hidden; // IE11 & Edge fix
-  //scroll-behavior: smooth;
   text-size-adjust: 100%;
-  height: 100%; // for the footer at bottom to work properly every parent needs to have 100% height
+  height: 100%; // "sticky footer" needs every parent to have 100% height
 }
 
 * {
@@ -86,7 +83,7 @@ a {
     outline: none;
   }
 
-  &:not(.mdc-card__interactive-container):not(.mdc-button) {
+  &:not(.mdc-card__interactive-container):not(.button-back) {
     color: $mdc-theme-primary;
     font-weight: 500;
 
@@ -108,7 +105,6 @@ iframe {
 }
 
 .layout {
-  //min-height: 100vh;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -144,57 +140,13 @@ noscript {
   }
 }
 
-.layout-enter-active,
-.page-enter-active {
-  transition: mdc-animation-enter(opacity, 250ms);
-}
-
-.layout-leave-active,
-.page-leave-active {
-  transition: mdc-animation-exit-permanent(opacity, 150ms);
-}
-
-.layout-enter,
-.layout-leave-to,
-.page-enter,
-.page-leave-to {
-  opacity: 0;
-}
-
-.fade--dialog-enter-active {
-  transition: mdc-animation-enter(opacity, 150ms);
-}
-
-.fade--dialog-leave-active {
-  transition: mdc-animation-exit-permanent(opacity, 75ms);
-}
-
-.fade--dialog-enter,
-.fade--dialog-leave-to {
-  opacity: 0;
-}
-
-.fade--card-group-enter-active {
-  transition: mdc-animation-enter(opacity, 150ms, 75ms), mdc-animation-enter(transform, 150ms, 75ms);
-}
-
-.fade--card-group-leave-active {
-  transition: mdc-animation-exit-permanent(opacity, 75ms), mdc-animation-exit-permanent(transform, 75ms);
-}
-
-.fade--card-group-enter,
-.fade--card-group-leave-to {
-  opacity: 0;
-  transform: scale(0.95);
-}
-
+// Material Design Components for Web
 .mdc-layout-grid {
   width: 100%;
 
   &__inner {
     width: 100%; // to deal with max-width, margin and stretching
     margin: 0 auto;
-    //max-width: $max-width;
   }
 
   &__cell > {
@@ -214,7 +166,6 @@ noscript {
   &--interactive {
     @include interactive-border;
     transition: transform 0.15s;
-    //overflow: hidden; // "fix" img being 1px too wide
 
     // fix shaking etc
     //backface-visibility: hidden;  // greatly reduces performance in Firefox Preview on Android
@@ -362,6 +313,7 @@ noscript {
       opacity: 0.5;
       background: none;
     }
+
     &::before,
     &::after {
       z-index: -1;
@@ -370,14 +322,9 @@ noscript {
     &:hover,
     &:focus,
     &:active {
-      opacity: 1;
-    }
-
-    &:hover,
-    &:focus,
-    &:active {
       @include mdc-button-container-fill-color(rgba(0, 0, 0, 0.35));
       @include mdc-button-ink-color(white);
+      opacity: 1;
     }
   }
 
@@ -407,7 +354,6 @@ noscript {
 
   &-surface {
     @include mdc-menu-surface-fill-color($mdc-theme-surface-secondary);
-    //transform: none !important;
   }
 
   .mdc-list .mdc-list-item {
@@ -429,10 +375,6 @@ noscript {
     }
   }
 }
-
-/*.mdc-list-item[data-value=''] {
-  display: none !important;
-}*/
 
 .mdc-select {
   @include mdc-select-container-fill-color($mdc-theme-surface-secondary);
@@ -481,7 +423,7 @@ noscript {
 }
 
 .mdc-icon-button {
-  //@include mdc-icon-button-disabled-ink-color(rgba(255, 255, 255, 0.5));
+  //@include mdc-icon-button-disabled-ink-color(rgba(255, 255, 255, 0.5)); // doesn't work?
 
   &:disabled {
     opacity: 0.5;
@@ -516,4 +458,49 @@ noscript {
   .handle {
     background: rgba(0, 0, 0, 0.25);
   }
+}
+
+// Transitions
+.layout-enter-active,
+.page-enter-active {
+  transition: mdc-animation-enter(opacity, 250ms);
+}
+
+.layout-leave-active,
+.page-leave-active {
+  transition: mdc-animation-exit-permanent(opacity, 150ms);
+}
+
+.layout-enter,
+.layout-leave-to,
+.page-enter,
+.page-leave-to {
+  opacity: 0;
+}
+
+.fade--dialog-enter-active {
+  transition: mdc-animation-enter(opacity, 150ms);
+}
+
+.fade--dialog-leave-active {
+  transition: mdc-animation-exit-permanent(opacity, 75ms);
+}
+
+.fade--dialog-enter,
+.fade--dialog-leave-to {
+  opacity: 0;
+}
+
+.fade--card-group-enter-active {
+  transition: mdc-animation-enter(opacity, 150ms, 75ms), mdc-animation-enter(transform, 150ms, 75ms);
+}
+
+.fade--card-group-leave-active {
+  transition: mdc-animation-exit-permanent(opacity, 75ms), mdc-animation-exit-permanent(transform, 75ms);
+}
+
+.fade--card-group-enter,
+.fade--card-group-leave-to {
+  opacity: 0;
+  transform: scale(0.95);
 }

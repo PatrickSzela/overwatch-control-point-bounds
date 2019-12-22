@@ -49,22 +49,6 @@
   }
 }
 
-// @mixin font-secondary($scale: true, $fix-scale: true) {
-//   font-family: $font-family-secondary;
-//   font-weight: 700;
-//   text-transform: uppercase;
-//   margin-bottom: $text-uppercase-margin-bottom; // hack to deal with uppercase leaving empty space below letters
-
-//   @if $scale {
-//     transform: scale(0.925, 1);
-
-//     @if and $fix-scale {
-//       margin-left: calc(((100% * 0.925) - 100%) / 2); // reverse scale changing width
-//       margin-right: calc(((100% * 0.925) - 100%) / 2); // reverse scale changing width
-//     }
-//   }
-// }
-
 @mixin text-primary-centered {
   margin-left: calc(((100% * 0.925) - 100%) / 2 + #{$text-primary-centered-left-margin});
 }

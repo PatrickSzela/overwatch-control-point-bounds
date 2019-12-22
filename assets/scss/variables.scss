@@ -34,8 +34,8 @@ $mdc-shape-medium-component-radius: 0px;
 $mdc-shape-small-component-radius: 2px;
 
 // theme
-$mdc-theme-primary: #00a5e2; //#2c9beb;
-$mdc-theme-secondary: #ff9c00; //#e99a2d;
+$mdc-theme-primary: #00a5e2;
+$mdc-theme-secondary: #ff9c00;
 $mdc-theme-background: $background-color;
 
 $mdc-theme-on-primary: white;
@@ -67,8 +67,8 @@ $mdc-select-arrow-padding: 42px;
 $mdc-snackbar-fill-color: $mdc-theme-surface-secondary;
 $mdc-snackbar-label-ink-color: white;
 $mdc-snackbar-label-type-scale: 'subtitle2';
-//$mdc-snackbar-dismiss-ink-color: white;
-//$mdc-snackbar-action-ink-color: white;
+//$mdc-snackbar-dismiss-ink-color: white; // doesn't work?
+//$mdc-snackbar-action-ink-color: white; // doesn't work?
 $mdc-snackbar-padding: 14px 12px;
 
 // mdc-typography
@@ -127,7 +127,7 @@ $mdc-typography-styles-button: map-merge($typography-font-family-secondary-base,
   font-weight: 700,
   font-size: 0.9375em,
   letter-spacing: 0,
-  margin: 0 // original margin would get applied to .mdc-button, .not mdc-button__label
+  margin: 0 // original margin would get applied to .mdc-button, not .mdc-button__label
 ));
 
 $mdc-typography-styles-caption: map-merge($typography-font-family-secondary-base, (
