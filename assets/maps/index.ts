@@ -1,7 +1,7 @@
 export interface MapDetails {
   position: { x: number; y: number };
   contestable: boolean;
-  difficulty: 1 | 2 | 3;
+  difficulty?: 0 | 1 | 2 | 3;
   description?: string;
 }
 
@@ -26,9 +26,6 @@ export enum MapTypes {
 export interface Map {
   name: string;
   type: MapTypes;
-  /*background: string; // use URL instead?
-  thumbnail: string; // use URL instead?
-  color: string; // download @types/color?*/
   points: { [index: string]: MapPoint };
 }
 
