@@ -22,5 +22,6 @@ export default Vue.extend({
   position: fixed;
   right: 24px;
   bottom: 24px;
+  z-index: 20;
 }
 </style>
