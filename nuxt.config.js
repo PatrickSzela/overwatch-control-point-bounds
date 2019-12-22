@@ -1,3 +1,12 @@
+const routerBase =
+  process.env.DEPLOY_ENV === 'GH_PAGES'
+    ? {
+        router: {
+          base: '/<repository-name>/'
+        }
+      }
+    : {};
+
 export default {
   mode: 'spa',
   /*
@@ -86,5 +95,6 @@ export default {
   layoutTransition: {
     name: 'layout'
   },
-  loadingIndicator: ''
+  loadingIndicator: '',
+  ...routerBase
 };
