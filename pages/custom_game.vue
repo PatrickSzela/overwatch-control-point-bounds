@@ -157,18 +157,24 @@ export default Vue.extend({
       flex-direction: row;
     }
 
+    @media (max-width: mdc-layout-grid-breakpoint-max('tablet')) {
+      /deep/ .mdc-card__title {
+        @include text-primary-centered;
+        text-align: center;
+      }
+    }
+
     img {
-      width: 40%;
+      width: 80%;
       height: 100%;
       align-self: center;
-      max-width: 400px;
+      max-width: 320px;
+      margin: -12px -12px 0 0;
 
-      &.image--payload {
-        margin: -24px -24px 0 0;
-
-        @media (min-width: mdc-layout-grid-breakpoint-min('desktop')) {
-          margin: -24px -24px 24px 24px;
-        }
+      @media (min-width: mdc-layout-grid-breakpoint-min('desktop')) {
+        width: 40%;
+        max-width: 400px;
+        margin: -24px -24px 24px 24px;
       }
     }
   }
