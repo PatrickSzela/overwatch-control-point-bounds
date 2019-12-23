@@ -7,19 +7,19 @@
           <m-card class="mdc-card--layout-gutter mdc-card--custom-game">
             <m-card-media class="control-point-media" sixteen-nine :square="false"></m-card-media>
 
-            <m-card-primary title="Compare boundries of control points"></m-card-primary>
+            <m-card-primary title="Compare boundaries of control points"></m-card-primary>
 
             <m-card-secondary>
               <p>
-                Boundries of every control point in the game (except those from Arcade maps) have been manually "mapped"
-                and now are surrounded with a "grapple effect", which shows the more accurate bounds.
+                boundaries of every control point in the game (except those from Arcade maps) have been manually
+                "mapped" and now are surrounded with a "grapple effect", which shows the more accurate bounds.
               </p>
               <p>
                 After importing the code just select map which you would like to check out, start the game and then
                 start the game mode. Everything else is handled automatically!
               </p>
               <p>
-                <strong>There are a few thing you should know: </strong>
+                <strong>There are a few thing you should know:</strong>
               </p>
               <ul>
                 <li>

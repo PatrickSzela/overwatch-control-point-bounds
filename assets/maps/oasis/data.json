@@ -56,7 +56,7 @@
               "position": { "x": 960, "y": 400 },
               "contestable": false,
               "difficulty": 0,
-              "description": "When standing on this \"footbridge\" it's not possible to contest the point. For precise boundries under it check the Custom Game"
+              "description": "When standing on this \"footbridge\" it's not possible to contest the point. For precise boundaries under it check the Custom Game"
             },
             {
               "position": { "x": 960, "y": 1000 },

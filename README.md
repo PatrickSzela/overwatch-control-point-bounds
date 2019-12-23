@@ -1,6 +1,6 @@
 # Overwatch Control Point Bounds
 
-Small website that allows user to compare boundries of control points in Overwatch with their more accurate representation.
+Small website that allows user to compare boundaries of control points in Overwatch with their more accurate representation.
 
 ## Build Setup
 

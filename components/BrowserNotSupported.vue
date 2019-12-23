@@ -1,5 +1,6 @@
 <template>
   <m-snackbar
+    class="browser-not-supported"
     :open="open"
     :has-dismiss="true"
     :timeout-ms="10000"

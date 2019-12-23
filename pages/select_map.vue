@@ -3,7 +3,7 @@
   <client-only>
     <div class="page">
       <header>
-        <h2>Select map to compare boundries</h2>
+        <h2>Select map to compare boundaries</h2>
 
         <nav>
           <radio-button
