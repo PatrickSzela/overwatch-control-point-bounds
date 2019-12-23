@@ -92,6 +92,7 @@ export default Vue.extend({
 
   &__media {
     @include webp('~assets/images/sunburst.png');
+    overflow: hidden; // in case when material-icons font isn't loaded
 
     /deep/ &-content {
       font-size: 2em;
