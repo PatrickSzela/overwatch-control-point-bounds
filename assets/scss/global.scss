@@ -76,7 +76,7 @@ p {
   @include mdc-typography('body2');
 }
 
-li {
+li:not(.mdc-list-item) {
   @include mdc-typography('body2');
 }
 
