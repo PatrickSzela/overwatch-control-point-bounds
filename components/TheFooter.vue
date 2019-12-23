@@ -76,5 +76,9 @@ footer {
       padding-top: 0;
     }
   }
+
+  a {
+    font-weight: 500;
+  }
 }
 </style>
