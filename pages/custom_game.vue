@@ -11,15 +11,22 @@
 
             <m-card-secondary>
               <p>
-                boundaries of every control point in the game (except those from Arcade maps) have been manually
-                "mapped" and now are surrounded with a "grapple effect", which shows the more accurate bounds.
+                Boundaries of every control point in the game (except those from Arcade maps) have been manually
+                "mapped" and now are surrounded with a "grapple effect", which shows its more accurate bounds.
               </p>
               <p>
                 After importing the code just select map which you would like to check out, start the game and then
-                start the game mode. Everything else is handled automatically!
+                start the game mode!
               </p>
               <p>
-                <strong>There are a few thing you should know:</strong>
+                While testing things out, you might have noticed some random spheres on the map:
+              </p>
+              <ul>
+                <li>Red sphere - spots on which it's not possible to contest the point</li>
+                <li>Green sphere - spots on which you can contest the point.</li>
+              </ul>
+              <p>
+                And a friendly reminder:
               </p>
               <ul>
                 <li>
@@ -27,7 +34,8 @@
                   proper point in game mode settings.
                 </li>
                 <li>
-                  To compare bounds of the 2nd point in Assault game mode, firstly you have to capture the 1st point.
+                  To see the bounds of the 2nd point in Assault game mode, firstly you have to capture the 1st point
+                  (just move yourself to Team 2).
                 </li>
               </ul>
             </m-card-secondary>
@@ -37,7 +45,7 @@
         <m-layout-grid-cell :span="12">
           <m-card class="mdc-card--layout-gutter mdc-card--payload">
             <div>
-              <m-card-primary title="Find out cool stalling point on payload maps"></m-card-primary>
+              <m-card-primary title="Find cool stall spots on payload maps"></m-card-primary>
 
               <m-card-secondary>
                 <p>

@@ -1,15 +1,11 @@
 <template>
   <div class="layout layout--default">
     <background-fullscreen :src="background.image" :color="background.color" darken></background-fullscreen>
-
     <the-header></the-header>
-
     <main>
       <nuxt />
     </main>
-
     <the-footer></the-footer>
-
     <browser-not-supported></browser-not-supported>
   </div>
 </template>
