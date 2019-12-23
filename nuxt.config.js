@@ -48,11 +48,6 @@ export default {
     ],
     link: [
       {
-        rel: 'icon',
-        type: 'image/x-icon',
-        href: routerBase.router ? routerBase.router.base + 'favicon.ico' : '/favicon.ico'
-      },
-      {
         rel: 'stylesheet',
         href: 'https://fonts.googleapis.com/css?family=Teko|Roboto|Roboto+Condensed|Material+Icons&display=swap'
       },
