@@ -5,7 +5,7 @@
       <m-layout-grid-inner>
         <m-layout-grid-cell :span="12">
           <m-card class="mdc-card--layout-gutter mdc-card--custom-game">
-            <m-card-media class="control-point-media" sixteen-nine :square="false"></m-card-media>
+            <m-card-media sixteen-nine :square="false"></m-card-media>
 
             <m-card-primary title="Compare boundaries of control points"></m-card-primary>
 
@@ -63,8 +63,7 @@
               </m-card-secondary>
             </div>
 
-            <m-card-media class="payload-media" sixteen-nine :square="false"></m-card-media>
-            <!-- <img class="image--payload" src="~/assets/images/payload.png?webp" alt="Payload" /> -->
+            <m-card-media sixteen-nine :square="false"></m-card-media>
           </m-card>
         </m-layout-grid-cell>
 
@@ -126,6 +125,7 @@ export default Vue.extend({
         this.copyCustomGameCodeFailed = true;
       }
 
+      // Dirty fix because m-snackbar doesn't handle v-model, so I had to resort to using open prop
       setTimeout(() => {
         this.copyCustomGameCodeFailed = false;
         this.copyCustomGameCodeSuccedeed = false;
@@ -143,27 +143,6 @@ export default Vue.extend({
 <style lang="scss" scoped>
 @import '~assets/scss/mixins';
 @import '@material/layout-grid/mixins';
-
-.control-point-media {
-  @include webp('~assets/images/control_point.jpg');
-  background-color: black;
-}
-
-// TODO: clean up
-.payload-media {
-  @include webp('~assets/images/payload.png');
-  background-size: contain;
-  width: 70%;
-  margin: -12px -12px 0 0;
-  align-self: center;
-  max-width: 320px;
-
-  @media (min-width: mdc-layout-grid-breakpoint-min('desktop')) {
-    flex-basis: 35%;
-    max-width: none;
-    margin: -24px -24px 24px 24px;
-  }
-}
 
 .mdc-card {
   &--custom-game {
@@ -188,19 +167,22 @@ export default Vue.extend({
     }
 
     .mdc-card__container {
-      flex-basis: 65%;
+      @media (min-width: mdc-layout-grid-breakpoint-min('desktop')) {
+        flex-basis: 65%; // additionally IE fix
+      }
     }
 
-    img {
-      width: 80%;
-      height: 100%;
-      align-self: center;
-      max-width: 320px;
+    .mdc-card__media {
+      @include webp('~assets/images/payload.png');
+      background-size: contain;
+      width: 60%;
       margin: -12px -12px 0 0;
+      align-self: center;
+      max-width: 280px;
 
       @media (min-width: mdc-layout-grid-breakpoint-min('desktop')) {
-        width: 40%;
-        max-width: 400px;
+        flex-basis: 35%;
+        max-width: none;
         margin: -24px -24px 24px 24px;
       }
     }
@@ -208,6 +190,8 @@ export default Vue.extend({
 
   &--custom-game {
     .mdc-card__media {
+      @include webp('~assets/images/control_point.jpg');
+      background-color: black;
       max-height: 350px;
     }
   }
