@@ -46,6 +46,10 @@
                   some interesting stalling spots. Don't forget that contesting it requires you to have a line of sight
                   with it!
                 </p>
+                <p>
+                  If you wish to disable that option, go to the Workshop and disable "Display sphere around the payload"
+                  rule.
+                </p>
               </m-card-secondary>
             </div>
 
@@ -91,7 +95,7 @@ export default Vue.extend({
   },
   data() {
     return {
-      customGameCode: 'N165P',
+      customGameCode: 'BYN3F',
       copyCustomGameCodeSuccedeed: false,
       copyCustomGameCodeFailed: false
     };
