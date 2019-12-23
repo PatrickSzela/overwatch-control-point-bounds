@@ -21,7 +21,7 @@
               <p>
                 <strong
                   >The video above is outdated and contains an old Custom Game code. Check
-                  <nuxt-link to="/custom_game">Custom Game</nuxt-link> for an updated one. The rest of the video is
+                  <nuxt-link to="/custom_game">Custom Game</nuxt-link> page for an updated one. The rest of the video is
                   still up to date.</strong
                 >
               </p>

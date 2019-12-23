@@ -19,12 +19,14 @@
                 start the game mode!
               </p>
               <p>
-                While testing things out, you might have noticed some random spheres on the map:
+                While testing things out, you might have noticed some random colorful spheres on the map. Here is what
+                they mean:
               </p>
               <ul>
-                <li>Red sphere - spots on which it's not possible to contest the point</li>
-                <li>Green sphere - spots on which you can contest the point.</li>
+                <li>Red sphere - spot on which it's not possible to contest the point</li>
+                <li>Green sphere - spot on which you can contest the point.</li>
               </ul>
+              <p>You can use the <nuxt-link to="/compare">Compare</nuxt-link> tool to learn more about them.</p>
               <p>
                 And a friendly reminder:
               </p>
@@ -44,7 +46,7 @@
 
         <m-layout-grid-cell :span="12">
           <m-card class="mdc-card--layout-gutter mdc-card--payload">
-            <div>
+            <div class="mdc-card__container">
               <m-card-primary title="Find cool stall spots on payload maps"></m-card-primary>
 
               <m-card-secondary>
@@ -61,8 +63,8 @@
               </m-card-secondary>
             </div>
 
-            <!-- <m-card-media class="payload-media" sixteen-nine :square="false"></m-card-media> -->
-            <img class="image--payload" src="~/assets/images/payload.png?webp" alt="Payload" />
+            <m-card-media class="payload-media" sixteen-nine :square="false"></m-card-media>
+            <!-- <img class="image--payload" src="~/assets/images/payload.png?webp" alt="Payload" /> -->
           </m-card>
         </m-layout-grid-cell>
 
@@ -147,11 +149,20 @@ export default Vue.extend({
   background-color: black;
 }
 
+// TODO: clean up
 .payload-media {
   @include webp('~assets/images/payload.png');
-  width: 100%;
-  margin: -24px -24px 24px 24px;
-  flex-basis: 33%;
+  background-size: contain;
+  width: 70%;
+  margin: -12px -12px 0 0;
+  align-self: center;
+  max-width: 320px;
+
+  @media (min-width: mdc-layout-grid-breakpoint-min('desktop')) {
+    flex-basis: 35%;
+    max-width: none;
+    margin: -24px -24px 24px 24px;
+  }
 }
 
 .mdc-card {
@@ -174,6 +185,10 @@ export default Vue.extend({
         @include text-primary-centered;
         text-align: center;
       }
+    }
+
+    .mdc-card__container {
+      flex-basis: 65%;
     }
 
     img {
