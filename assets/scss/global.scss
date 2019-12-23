@@ -76,6 +76,10 @@ p {
   @include mdc-typography('body2');
 }
 
+li {
+  @include mdc-typography('body2');
+}
+
 a {
   text-decoration: none;
 
