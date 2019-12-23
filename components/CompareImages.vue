@@ -240,6 +240,8 @@ export default Vue.extend({
     preload(image: string, type: ImageTypes) {
       this.loadingState = LoadingStates.Loading;
       this.images[type].src = image;
+
+      this.activeDetail = null;
     },
     getData(computedProperty: string) {
       // @ts-ignore
@@ -331,6 +333,9 @@ export default Vue.extend({
     },
     onWindowResize() {
       this.isScreenTooSmall = window.innerWidth < 680 || window.innerHeight < 300;
+      if (this.isScreenTooSmall) {
+        this.activeDetail = null;
+      }
     }
   }
 });
