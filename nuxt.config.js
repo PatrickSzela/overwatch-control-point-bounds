@@ -3,6 +3,9 @@ const routerBase =
     ? {
         router: {
           base: '/overwatch-control-point-bounds/'
+        },
+        head: {
+          meta: [{ rel: 'icon', type: 'image/x-icon', href: '/overwatch-control-point-bounds/favicon.ico' }]
         }
       }
     : {};
