@@ -7,6 +7,8 @@ const routerBase =
       }
     : {};
 
+const title = 'Overwatch Control Point Bounds'; // SPA has some issues with process.env.title
+
 export default {
   mode: 'spa',
   /*
@@ -26,6 +28,22 @@ export default {
         hid: 'description',
         name: 'description',
         content: process.env.npm_package_description || ''
+      },
+      {
+        name: 'apple-mobile-web-app-title',
+        content: title
+      },
+      {
+        name: 'application-name',
+        content: title
+      },
+      {
+        name: 'msapplication-TileColor',
+        content: '#ff9c00'
+      },
+      {
+        name: 'theme-color',
+        content: '#ffffff'
       }
     ],
     link: [
@@ -37,6 +55,32 @@ export default {
       {
         rel: 'stylesheet',
         href: 'https://fonts.googleapis.com/css?family=Teko|Roboto|Roboto+Condensed|Material+Icons&display=swap'
+      },
+      {
+        rel: 'apple-touch-icon',
+        sizes: '180x180',
+        href: routerBase.router ? routerBase.router.base + 'apple-touch-icon.png' : '/apple-touch-icon.png'
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '32x32',
+        href: routerBase.router ? routerBase.router.base + 'favicon-32x32.png' : '/favicon-32x32.png'
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '16x16',
+        href: routerBase.router ? routerBase.router.base + 'favicon-16x16.png' : '/favicon-16x16.png'
+      },
+      {
+        rel: 'manifest',
+        href: routerBase.router ? routerBase.router.base + 'site.webmanifest' : '/site.webmanifest'
+      },
+      {
+        rel: 'mask-icon',
+        color: '#ff9c00',
+        href: routerBase.router ? routerBase.router.base + 'safari-pinned-tab.svg' : '/safari-pinned-tab.svg'
       }
     ]
   },
