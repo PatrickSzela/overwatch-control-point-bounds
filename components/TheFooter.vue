@@ -44,7 +44,7 @@ footer {
 
 .footer__content {
   display: flex;
-  flex-direction: column;
+  flex-direction: column; // TODO: broken in IE11 but at this point I'm not sure if I even care
   max-width: $max-width;
   box-sizing: border-box;
 
