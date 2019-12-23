@@ -118,7 +118,7 @@ export default Vue.extend({
   data() {
     return {
       isFullscreenEnabled: false,
-      isOverlayImagesEnabled: false,
+      isOverlayImagesEnabled: true,
       isDetailsOverlayEnabled: true,
       isScreenTooSmall: false,
       images: { left: new Image(), right: new Image(), background: new Image() },
