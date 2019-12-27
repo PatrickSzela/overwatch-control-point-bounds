@@ -27,7 +27,14 @@
         "top": {
           "name": "Top view",
           "src": "top",
-          "details": []
+          "details": [
+            {
+              "position": { "x": 970, "y": 590 },
+              "contestable": true,
+              "difficulty": 1,
+              "description": "It's possible to contest the point when standing on the pedestal of this statue"
+            }
+          ]
         }
       }
     }

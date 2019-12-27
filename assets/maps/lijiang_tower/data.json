@@ -21,6 +21,11 @@
               "contestable": true,
               "difficulty": 2,
               "description": "It's possible to contest the point when standing on this screen (check the Custom Game for precise bounds)"
+            },
+            {
+              "position": { "x": 960, "y": 435 },
+              "contestable": true,
+              "difficulty": 0
             }
           ]
         }
