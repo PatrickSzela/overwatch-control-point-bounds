@@ -104,7 +104,7 @@ export default Vue.extend({
   },
   data() {
     return {
-      customGameCode: 'BYN3F',
+      customGameCode: 'CFKK0',
       copyCustomGameCodeSuccedeed: false,
       copyCustomGameCodeFailed: false
     };
