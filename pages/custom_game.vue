@@ -11,35 +11,53 @@
 
             <m-card-secondary>
               <p>
-                Boundaries of every control point in the game (except those from Arcade maps) have been manually
-                "mapped" and now are surrounded with a "grapple effect", which shows its more accurate bounds.
+                If you wish to compare the boundaries by yourself, check out this Custom Game! Every control point in
+                the game (except those from Arcade maps) has been manually "mapped" and now has "grapple effect" around
+                it, which marks its more accurate bounds.
+              </p>
+
+              <p>
+                After importing the code (which you can find on the bottom of this page) just select the map which you
+                would like to check out (from MAPS menu in Custom Game settings) and start the game!
+              </p>
+
+              <p>
+                <strong>Do event maps have the same boundaries as the non-event ones?</strong>
               </p>
               <p>
-                After importing the code just select map which you would like to check out, start the game and then
-                start the game mode!
+                Yes they do! I would add an option to generate bounds for them too but there are some technical
+                limitations in the Workshop that prohibit me from doing it.
+              </p>
+
+              <p>
+                <strong>Have you mapped height of these boundaries?</strong>
               </p>
               <p>
-                While testing things out, you might have noticed some random colorful spheres on the map. Here is what
-                they mean:
+                Unfortunately no, mapping height of every control point's detection hitbox is almost impossible to do,
+                because on most maps the hitboxes are very complex and their height varies depending on checked
+                position.
+              </p>
+
+              <p>
+                <strong>What are these colorful spheres I can see on some maps?</strong>
+              </p>
+              <p>
+                They mark some (more or less) interesting spots on which player can or can't contest the point:
               </p>
               <ul>
-                <li>Red sphere - spot on which it's not possible to contest the point</li>
-                <li>Green sphere - spot on which you can contest the point.</li>
+                <li>Green sphere - it's possible to contest the point</li>
+                <li>Red sphere - it's not possible to contest the point.</li>
               </ul>
               <p>You can use the <nuxt-link to="/compare">Compare</nuxt-link> tool to learn more about them.</p>
+
               <p>
-                And a friendly reminder:
+                <strong>I can't see the ingame boundaries of 2nd point in Assault mode!</strong>
               </p>
-              <ul>
-                <li>
-                  If you want to check out bounds of control points in Control game mode, don't forget to select the
-                  proper point in game mode settings.
-                </li>
-                <li>
-                  To see the bounds of the 2nd point in Assault game mode, firstly you have to capture the 1st point
-                  (just move yourself to Team 2).
-                </li>
-              </ul>
+              <p>
+                It's unfortunately a game limitation. To see these bounds, firstly you have to capture the 1st point
+                (just move yourself to Team 2, capture it and move back to Team 1). This also requires the game mode to
+                be started.
+              </p>
             </m-card-secondary>
           </m-card>
         </m-layout-grid-cell>
@@ -51,14 +69,17 @@
 
               <m-card-secondary>
                 <p>
-                  Additionally I've added a big, yellow sphere around every payload in the game. According to my
-                  research detection radius of every payload equals to about 7 meters, so feel free to hop in and find
-                  some interesting stalling spots. Don't forget that contesting it requires you to have a line of sight
-                  with it!
+                  Additionally I've added a big, yellow sphere around every payload in the game - according to my
+                  "research" the detection radius of every payload equals to about 7 meters. So feel free to hop in and
+                  find some interesting stalling spots! Don't forget that contesting the payload requires you to have a
+                  line of sight with it, and for the Hybrid game mode the actual ingame hitbox gets activated after
+                  unlocking the point.
                 </p>
                 <p>
-                  If you wish to disable that option, go to the Workshop and disable "Display sphere around the payload"
-                  rule.
+                  <strong>Can I disable that sphere?</strong>
+                </p>
+                <p>
+                  Yes you can! Just go to the Workshop and disable "Display sphere around the payload" rule.
                 </p>
               </m-card-secondary>
             </div>
