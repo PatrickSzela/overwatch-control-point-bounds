@@ -14,7 +14,7 @@
               "position": { "x": 960, "y": 450 },
               "contestable": false,
               "difficulty": 0,
-              "description": "It's not possible to contest the point when standing on the roof of this building"
+              "description": "It's not possible to contest the point when standing on the roof of this building (or its edge), but you can when inside of it"
             }
           ]
         }
