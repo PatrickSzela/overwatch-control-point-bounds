@@ -1,6 +1,6 @@
 <template>
   <m-snackbar
-    class="browser-not-supported"
+    class="browser-not-supported-snackbar"
     :open="open"
     :has-dismiss="true"
     :timeout-ms="10000"
@@ -37,7 +37,7 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-.mdc-snackbar {
+.browser-not-supported-snackbar {
   bottom: initial;
   top: 0;
 }

@@ -1,7 +1,7 @@
 <template>
-  <div class="ow-spinner" :class="classes">
-    <div class="ow-spinner__container">
-      <div v-for="i in 7" :key="i" class="ow-spinner__hexagon"></div>
+  <div class="overwatch-spinner" :class="classes">
+    <div class="overwatch-spinner__container">
+      <div v-for="i in 7" :key="i" class="overwatch-spinner__hexagon"></div>
     </div>
   </div>
 </template>
@@ -14,9 +14,9 @@ export default Vue.extend({
     light: Boolean
   },
   computed: {
-    classes(): object {
+    classes() {
       return {
-        'ow-spinner--light': this.light
+        'overwatch-spinner--light': this.light
       };
     }
   }
@@ -25,7 +25,7 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 // fading animation based on https://github.com/govcharenko/overwatch-loader
-// works best if .ow-spinner has width divisible by 33
+// works best if .overwatch-spinner has width divisible by 33
 $time: 2.5;
 $opacity: 1;
 $count: 7;
@@ -54,7 +54,7 @@ $count: 7;
   }
 }
 
-.ow-spinner {
+.overwatch-spinner {
   overflow: hidden;
 
   &__container {

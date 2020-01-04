@@ -82,7 +82,7 @@ export default {
   /*
    ** Customize the progress-bar color
    */
-  loading: '~/components/OwLoadingOverlay.vue',
+  loading: '~/components/LoadingOverlay.vue',
   /*
    ** Global CSS
    */

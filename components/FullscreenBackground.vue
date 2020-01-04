@@ -1,5 +1,5 @@
 <template>
-  <div class="background" :class="classes" :style="styles"></div>
+  <div class="fullscreen-background" :class="classes" :style="styles"></div>
 </template>
 
 <script lang="ts">
@@ -21,8 +21,8 @@ export default Vue.extend({
   computed: {
     classes() {
       return {
-        'background--blur': this.blur,
-        'background--darken': this.darken
+        'fullscreen-background--blur': this.blur,
+        'fullscreen-background--darken': this.darken
       };
     },
     styles() {
@@ -36,7 +36,7 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-.background {
+.fullscreen-background {
   position: fixed;
   top: 0;
   right: 0;

@@ -82,7 +82,7 @@
         </div>
       </footer>
 
-      <button-back to="/select_map"></button-back>
+      <back-button to="/select_map"></back-button>
     </div>
   </client-only>
 </template>
@@ -91,7 +91,7 @@
 import Vue from 'vue';
 import CompareImages from '~/components/CompareImages.vue';
 import SelectFixed from '~/components/SelectFixed.vue';
-import ButtonBack from '~/components/ButtonBack.vue';
+import BackButton from '~/components/BackButton.vue';
 import maps, { Map, MapPoint, MapSide } from '~/assets/maps';
 
 function isMap(map: string) {
@@ -116,7 +116,7 @@ export default Vue.extend({
   components: {
     CompareImages,
     SelectFixed,
-    ButtonBack
+    BackButton
   },
   computed: {
     maps(): { [index: string]: Map } {

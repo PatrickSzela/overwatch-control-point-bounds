@@ -87,7 +87,7 @@ a {
     outline: none;
   }
 
-  &:not(.mdc-card__interactive-container):not(.button-back) {
+  &:not(.mdc-card__interactive-container):not(.back-button) {
     color: $mdc-theme-primary;
 
     &:hover,

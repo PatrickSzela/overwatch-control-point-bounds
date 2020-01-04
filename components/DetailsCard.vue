@@ -1,8 +1,8 @@
 <template>
   <transition name="fade">
-    <m-card class="card-details">
+    <m-card class="details-card">
       <m-card-primary :title="title" title-tag="h4">
-        <div v-if="difficulty > 0" class="card-details__stars">
+        <div v-if="difficulty > 0" class="details-card__difficulty">
           <span>Difficulty:</span>
           <m-icon v-for="star in difficulty" :key="`star_${star}`" icon="star"></m-icon>
           <m-icon v-for="star in maxDifficulty - difficulty" :key="`star_border_${star}`" icon="star_border"></m-icon>
@@ -52,11 +52,11 @@ export default Vue.extend({
 @import '@material/card/_mixins';
 @import '@material/typography/_mixins';
 
-.card-details {
+.details-card {
   @include mdc-card-fill-color($mdc-theme-surface-secondary);
   color: white;
 
-  &__stars {
+  &__difficulty {
     display: flex;
     align-items: center;
 

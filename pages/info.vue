@@ -50,18 +50,18 @@
         </m-layout-grid-cell>
       </m-layout-grid-inner>
 
-      <button-back to="/"></button-back>
+      <back-button to="/"></back-button>
     </m-layout-grid>
   </client-only>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
-import ButtonBack from '~/components/ButtonBack.vue';
+import BackButton from '~/components/BackButton.vue';
 
 export default Vue.extend({
   components: {
-    ButtonBack
+    BackButton
   },
   head() {
     return {

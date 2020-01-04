@@ -37,7 +37,7 @@
         <!-- </m-layout-grid-inner> -->
       </main>
 
-      <button-back to="/"></button-back>
+      <back-button to="/"></back-button>
     </div>
   </client-only>
 </template>
@@ -45,7 +45,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import RadioButton from '~/components/RadioButton.vue';
-import ButtonBack from '~/components/ButtonBack.vue';
+import BackButton from '~/components/BackButton.vue';
 import maps, { filteredMaps, MapTypes } from '~/assets/maps';
 
 let mapFilterCached: MapTypes = MapTypes.Assault;
@@ -53,7 +53,7 @@ let mapFilterCached: MapTypes = MapTypes.Assault;
 export default Vue.extend({
   components: {
     RadioButton,
-    ButtonBack
+    BackButton
   },
   data() {
     return {

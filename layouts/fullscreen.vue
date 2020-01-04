@@ -2,17 +2,17 @@
   <div class="layout layout--fullscreen">
     <nuxt />
 
-    <browser-not-supported></browser-not-supported>
+    <browser-not-supported-snackbar></browser-not-supported-snackbar>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
-import BrowserNotSupported from '~/components/BrowserNotSupported.vue';
+import BrowserNotSupportedSnackbar from '~/components/BrowserNotSupportedSnackbar.vue';
 
 export default Vue.extend({
   components: {
-    BrowserNotSupported
+    BrowserNotSupportedSnackbar
   }
 });
 </script>
@@ -35,15 +35,15 @@ export default Vue.extend({
 
   @each $size in map-keys($mdc-layout-grid-columns) {
     @include mdc-layout-grid-media-query_($size) {
-      > *:not(.button-back) {
+      > *:not(.back-button) {
         padding: 0 map-get($mdc-layout-grid-default-margin, $size) map-get($mdc-layout-grid-default-gutter, $size);
       }
 
-      > *:first-child:not(.button-back) {
+      > *:first-child:not(.back-button) {
         padding-top: map-get($mdc-layout-grid-default-margin, $size);
       }
 
-      > *:last-child:not(.button-back) {
+      > *:last-child:not(.back-button) {
         padding-bottom: map-get($mdc-layout-grid-default-margin, $size);
       }
     }

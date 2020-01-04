@@ -1,6 +1,6 @@
 <template>
   <transition name="fade--dialog">
-    <nuxt-link v-if="to" :to="to" class="mdc-button mdc-button--outlined button-back">Go back</nuxt-link>
+    <nuxt-link v-if="to" :to="to" class="back-button mdc-button mdc-button--outlined">Go back</nuxt-link>
   </transition>
 </template>
 
@@ -18,7 +18,7 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-.mdc-button {
+.back-button {
   position: fixed;
   right: 24px;
   bottom: 24px;

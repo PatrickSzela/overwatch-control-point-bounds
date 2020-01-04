@@ -1,7 +1,7 @@
 <template>
   <transition name="fade--dialog">
-    <div v-if="loading" id="ow-loading-overlay">
-      <ow-spinner light></ow-spinner>
+    <div v-if="loading" id="loading-overlay">
+      <overwatch-spinner light></overwatch-spinner>
       <h6>Loading...</h6>
 
       <m-snackbar v-model="failed" label-text="Failed while loading a page."></m-snackbar>
@@ -11,11 +11,11 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import OwSpinner from '~/components/OwSpinner.vue';
+import OverwatchSpinner from '~/components/OverwatchSpinner.vue';
 
 export default Vue.extend({
   components: {
-    OwSpinner
+    OverwatchSpinner
   },
   data() {
     return {
@@ -52,7 +52,7 @@ export default Vue.extend({
 @import '@material/layout-grid/_mixins';
 @import '@material/typography/_mixins';
 
-#ow-loading-overlay {
+#loading-overlay {
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
@@ -70,7 +70,7 @@ export default Vue.extend({
     }
   }
 
-  .ow-spinner {
+  .overwatch-spinner {
     width: 33px;
     padding-right: 12px;
   }

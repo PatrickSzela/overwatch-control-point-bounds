@@ -1,12 +1,12 @@
 <template>
   <div class="layout layout--default">
-    <background-fullscreen :src="background.image" :color="background.color" darken></background-fullscreen>
+    <fullscreen-background :src="background.image" :color="background.color" darken></fullscreen-background>
     <the-header></the-header>
     <main>
       <nuxt />
     </main>
     <the-footer></the-footer>
-    <browser-not-supported></browser-not-supported>
+    <browser-not-supported-snackbar></browser-not-supported-snackbar>
   </div>
 </template>
 
@@ -15,8 +15,8 @@ import Vue from 'vue';
 import maps, { Map } from 'assets/maps';
 import TheHeader from '~/components/TheHeader.vue';
 import TheFooter from '~/components/TheFooter.vue';
-import BackgroundFullscreen from '~/components/BackgroundFullscreen.vue';
-import BrowserNotSupported from '~/components/BrowserNotSupported.vue';
+import FullscreenBackground from '~/components/FullscreenBackground.vue';
+import BrowserNotSupportedSnackbar from '~/components/BrowserNotSupportedSnackbar.vue';
 
 const randomMapCached: string = Object.keys(maps)[Math.floor(Math.random() * Object.keys(maps).length)];
 
@@ -24,8 +24,8 @@ export default Vue.extend({
   components: {
     TheHeader,
     TheFooter,
-    BackgroundFullscreen,
-    BrowserNotSupported
+    FullscreenBackground,
+    BrowserNotSupportedSnackbar
   },
   data() {
     return {

@@ -32,19 +32,19 @@
         </div>
 
         <transition name="fade--dialog">
-          <card-details
+          <details-card
             v-if="activeDetail && !isScreenTooSmall && loadingState === loadingStates.Finished"
             :title="activeDetail.contestable ? 'Contestable' : 'Not contestable'"
             :description="activeDetail.description"
             :difficulty="activeDetail.difficulty"
             class="compare-images__detail-card"
-            :style="cardDetailsPosition"
-          ></card-details>
+            :style="DetailsCardPosition"
+          ></details-card>
         </transition>
 
         <transition name="fade--dialog">
           <div v-if="loadingState !== loadingStates.Finished" class="compare-images__loading-overlay">
-            <ow-spinner v-if="loadingState === loadingStates.Loading" light></ow-spinner>
+            <overwatch-spinner v-if="loadingState === loadingStates.Loading" light></overwatch-spinner>
             <p v-else-if="loadingState === loadingStates.Failed">Something went wrong while downloading image(s).</p>
           </div>
         </transition>
@@ -79,8 +79,8 @@
 <script lang="ts">
 import Vue, { PropType } from 'vue';
 import VueCompareImage from 'vue-compare-image';
-import OwSpinner from '~/components/OwSpinner.vue';
-import CardDetails from '~/components/CardDetails.vue';
+import OverwatchSpinner from '~/components/OverwatchSpinner.vue';
+import DetailsCard from '~/components/DetailsCard.vue';
 import { MapDetails } from '~/assets/maps';
 
 export enum ImageTypes {
@@ -96,7 +96,7 @@ export enum LoadingStates {
 }
 
 export default Vue.extend({
-  components: { VueCompareImage, OwSpinner, CardDetails },
+  components: { VueCompareImage, OverwatchSpinner, DetailsCard },
   props: {
     leftImage: {
       type: String,
@@ -151,7 +151,7 @@ export default Vue.extend({
     };
   },
   computed: {
-    cardDetailsPosition() {
+    DetailsCardPosition() {
       const pos = { top: '', right: '', bottom: '', left: '' };
 
       if (this.activeDetail) {
@@ -434,7 +434,7 @@ export default Vue.extend({
       text-align: center;
     }
 
-    .ow-spinner {
+    .overwatch-spinner {
       width: 10%;
     }
   }
