@@ -42,10 +42,6 @@ export default Vue.extend({
       > header {
         padding-top: map-get($mdc-layout-grid-default-margin, $size) !important;
       }
-
-      > footer {
-        padding-bottom: map-get($mdc-layout-grid-default-margin, $size) !important;
-      }
     }
   }
 
