@@ -39,12 +39,12 @@ export default Vue.extend({
         padding: 0 map-get($mdc-layout-grid-default-margin, $size) map-get($mdc-layout-grid-default-gutter, $size);
       }
 
-      > *:first-child:not(.back-button) {
-        padding-top: map-get($mdc-layout-grid-default-margin, $size);
+      > header {
+        padding-top: map-get($mdc-layout-grid-default-margin, $size) !important;
       }
 
-      > *:last-child:not(.back-button) {
-        padding-bottom: map-get($mdc-layout-grid-default-margin, $size);
+      > footer {
+        padding-bottom: map-get($mdc-layout-grid-default-margin, $size) !important;
       }
     }
   }
