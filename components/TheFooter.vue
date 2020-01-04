@@ -1,5 +1,5 @@
 <template>
-  <footer>
+  <footer class="footer">
     <div class="footer__content">
       <p class="footer__blizzard">
         Some images are property of Blizzard Entertainment:<br />
@@ -35,40 +35,42 @@ export default Vue.extend({
 @import '@material/layout-grid/_mixins';
 @import '@material/theme/_mixins';
 
-footer {
+.footer {
   @include mdc-theme-prop(color, 'text-primary-on-dark');
   background-color: $mdc-theme-surface-secondary;
   display: flex;
   justify-content: center;
-}
 
-.footer__content {
-  display: flex;
-  flex-direction: column; // TODO: broken in IE11 but at this point I'm not sure if I even care
-  max-width: $max-width;
-  box-sizing: border-box;
+  &__content {
+    display: flex;
+    flex-direction: column; // TODO: broken in IE11 but at this point I'm not sure if I even care
+    max-width: $max-width;
+    box-sizing: border-box;
 
-  @each $size in map-keys($mdc-layout-grid-columns) {
-    @include mdc-layout-grid-media-query_($size) {
-      padding: 24px map-get($mdc-layout-grid-default-margin, $size);
+    @each $size in map-keys($mdc-layout-grid-columns) {
+      @include mdc-layout-grid-media-query_($size) {
+        padding: 24px map-get($mdc-layout-grid-default-margin, $size);
+      }
     }
   }
 
-  .footer__blizzard,
-  .footer__author {
+  &__blizzard,
+  &__author {
     @include mdc-typography('caption');
     font-size: 0.875em;
   }
 
-  .footer__author {
+  &__author {
     padding-top: 8px;
   }
 
   @include mdc-layout-grid-media-query_('desktop') {
-    flex-direction: row;
-    align-items: center;
+    &__content {
+      flex-direction: row;
+      align-items: center;
+    }
 
-    .footer__author {
+    &__author {
       text-align: right;
       flex-shrink: 0;
       padding-left: 32px;

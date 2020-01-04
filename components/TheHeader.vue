@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header class="header">
     <div class="header__content">
       <div class="header__logo-overwatch" />
       <h1 class="header__logo-title">
@@ -19,7 +19,7 @@ export default Vue.extend({});
 @import '@/assets/scss/variables.scss';
 @import '@/assets/scss/mixins.scss';
 
-header {
+.header {
   color: white;
   text-align: center;
   display: flex;
@@ -28,22 +28,24 @@ header {
   padding: 48px 0;
   flex-shrink: 0;
 
-  .header__logo-overwatch {
-    @include webp('~assets/images/ow_logo.png');
-    padding-bottom: calc(80 / 460 * 100%);
-    background-position: center;
-    background-size: cover;
-    margin-top: -10px;
-    filter: drop-shadow(2px 4px 3px rgba(0, 0, 0, 0.35));
-  }
+  &__logo {
+    &-overwatch {
+      @include webp('~assets/images/ow_logo.png');
+      padding-bottom: calc(80 / 460 * 100%);
+      background-position: center;
+      background-size: cover;
+      margin-top: -10px;
+      filter: drop-shadow(2px 4px 3px rgba(0, 0, 0, 0.35));
+    }
 
-  .header__logo-title {
-    @include text-primary-centered;
-    text-shadow: 2px 4px 7px rgba(0, 0, 0, 0.5);
-    margin-top: -5px;
-    margin-bottom: $text-uppercase-margin-bottom;
-    padding: 0 0.65em;
-    user-select: none;
+    &-title {
+      @include text-primary-centered;
+      text-shadow: 2px 4px 7px rgba(0, 0, 0, 0.5);
+      margin-top: -5px;
+      margin-bottom: $text-uppercase-margin-bottom;
+      padding: 0 0.65em;
+      user-select: none;
+    }
   }
 }
 </style>
