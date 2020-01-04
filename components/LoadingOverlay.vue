@@ -1,6 +1,6 @@
 <template>
   <transition name="fade--dialog">
-    <div v-if="loading" id="loading-overlay">
+    <div v-if="loading" class="loading-overlay">
       <overwatch-spinner light></overwatch-spinner>
       <h6>Loading...</h6>
 
@@ -52,7 +52,7 @@ export default Vue.extend({
 @import '@material/layout-grid/_mixins';
 @import '@material/typography/_mixins';
 
-#loading-overlay {
+.loading-overlay {
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
