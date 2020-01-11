@@ -12,20 +12,20 @@
             <m-card-secondary>
               <p>
                 If you wish to compare the boundaries by yourself, check out this Custom Game! Every control point in
-                the game (except those from Arcade maps) has been manually "mapped" and now has "grapple effect" around
-                it, which marks its more accurate bounds.
+                the game (except those from Arcade maps) has been manually "mapped" and is now surrounded by a "grapple
+                effect" that marks its more accurate bounds.
               </p>
 
               <p>
-                After importing the code (which you can find on the bottom of this page) just select the map which you
-                would like to check out (from MAPS menu in Custom Game settings) and start the game!
+                After importing the code (which you can find on the bottom of this page) just select the map which
+                boundaries you would like to compare (from MAPS menu in Custom Game settings) and start the game!
               </p>
 
               <p>
                 <strong>Do event maps have the same boundaries as the non-event ones?</strong>
               </p>
               <p>
-                Yes they do! I would add an option to generate bounds for them too but there are some technical
+                Yes they do! I would add an option to generate bounds for these maps too but there are some technical
                 limitations in the Workshop that prohibit me from doing it.
               </p>
 
@@ -34,7 +34,7 @@
               </p>
               <p>
                 Unfortunately no, mapping height of every control point's detection hitbox is almost impossible to do,
-                because on most maps the hitboxes are very complex and their height varies depending on checked
+                because on most maps these hitboxes are very complex and their height varies depending on checked
                 position.
               </p>
 
@@ -70,10 +70,9 @@
               <m-card-secondary>
                 <p>
                   Additionally I've added a big, yellow sphere around every payload in the game - according to my
-                  "research" the detection radius of every payload equals to about 7 meters. So feel free to hop in and
-                  find some interesting stalling spots! Don't forget that contesting the payload requires you to have a
-                  line of sight with it, and for the Hybrid game mode the actual ingame hitbox gets activated after
-                  unlocking the point.
+                  "research" the detection radius of every payload equals to (about) 7 meters. So feel free to hop in
+                  and find some interesting stall spots! Don't forget that contesting the payload requires you to have a
+                  line of sight with it.
                 </p>
                 <p>
                   <strong>Can I disable that sphere?</strong>
