@@ -35,9 +35,9 @@
               <p>
                 Now, if you would like to check them out, you can do it in a special
                 <nuxt-link to="/custom_game">Custom Game</nuxt-link>, or, if you just want a general idea how they look,
-                you can <nuxt-link to="/custom_game">Compare them here</nuxt-link>. Be advised that boundaries in the
-                2nd option aren't as accurate as in the 1st one - bounds are distorted by camera's perspective and also
-                the ingame bounds are floating above the ground - so take them with a grain of salt.
+                you can <nuxt-link to="/compare">Compare them here</nuxt-link>. Be advised that boundaries in the 2nd
+                option aren't as accurate as in the 1st one - bounds are distorted by camera's perspective and also the
+                ingame bounds are floating above the ground - so take them with a grain of salt.
               </p>
               <p>
                 For anyone interested,
