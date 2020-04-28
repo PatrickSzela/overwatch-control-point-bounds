@@ -106,7 +106,7 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ['@bazzite/nuxt-optimized-images'],
+  modules: ['@aceforth/nuxt-optimized-images'],
   optimizedImages: {
     optimizeImages: true
   },
