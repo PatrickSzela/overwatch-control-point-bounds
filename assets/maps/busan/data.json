@@ -16,17 +16,18 @@
               "difficulty": 0
             }
           ]
-        }
-      }
-    },
-    "meka_base": {
-      "name": "Meka Base",
-      "src": "meka_base",
-      "sides": {
-        "top": {
-          "name": "Top view",
-          "src": "top",
-          "details": []
+        },
+        "height": {
+          "name": "Height",
+          "src": "height",
+          "height": 3.85,
+          "details": [
+            {
+              "position": { "x": 520, "y": 670 },
+              "contestable": true,
+              "difficulty": 0
+            }
+          ]
         }
       }
     },
@@ -44,6 +45,27 @@
               "difficulty": 0
             }
           ]
+        },
+        "height": {
+          "name": "Height",
+          "src": "height",
+          "height": 7.94
+        }
+      }
+    },
+    "meka_base": {
+      "name": "Meka Base",
+      "src": "meka_base",
+      "sides": {
+        "top": {
+          "name": "Top view",
+          "src": "top",
+          "details": []
+        },
+        "height": {
+          "name": "Height",
+          "src": "height",
+          "height": 5.35
         }
       }
     }

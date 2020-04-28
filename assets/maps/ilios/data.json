@@ -15,6 +15,52 @@
           "name": "Right side",
           "src": "right",
           "details": []
+        },
+        "height": {
+          "name": "Height",
+          "src": "height",
+          "height": 5.98
+        }
+      }
+    },
+    "well": {
+      "name": "Well",
+      "src": "well",
+      "sides": {
+        "top": {
+          "name": "Top view",
+          "src": "top",
+          "details": [
+            {
+              "position": { "x": 1550, "y": 200 },
+              "contestable": false,
+              "difficulty": 0,
+              "description": "Smaller heroes might not be able to contest the point when standing next to this wall, even though it's possible from the other side"
+            },
+            {
+              "position": { "x": 1555, "y": 370 },
+              "contestable": false,
+              "difficulty": 0,
+              "description": "Smaller heroes might not be able to contest the point when standing next to this wall, even though it's possible from the other side"
+            },
+            {
+              "position": { "x": 700, "y": 980 },
+              "contestable": false,
+              "difficulty": 0,
+              "description": "Smaller heroes might not be able to contest the point when standing next to this wall"
+            },
+            {
+              "position": { "x": 1180, "y": 980 },
+              "contestable": false,
+              "difficulty": 0,
+              "description": "Smaller heroes might not be able to contest the point when standing next to this wall"
+            }
+          ]
+        },
+        "height": {
+          "name": "Height",
+          "src": "height",
+          "height": 6.23
         }
       }
     },
@@ -84,42 +130,11 @@
               "description": "It's possible to contest the point when standing on the edge of this metal plate"
             }
           ]
-        }
-      }
-    },
-    "well": {
-      "name": "Well",
-      "src": "well",
-      "sides": {
-        "top": {
-          "name": "Top view",
-          "src": "top",
-          "details": [
-            {
-              "position": { "x": 1550, "y": 200 },
-              "contestable": false,
-              "difficulty": 0,
-              "description": "Smaller heroes might not be able to contest the point when standing next to this wall, even though it's possible from the other side"
-            },
-            {
-              "position": { "x": 1555, "y": 370 },
-              "contestable": false,
-              "difficulty": 0,
-              "description": "Smaller heroes might not be able to contest the point when standing next to this wall, even though it's possible from the other side"
-            },
-            {
-              "position": { "x": 700, "y": 980 },
-              "contestable": false,
-              "difficulty": 0,
-              "description": "Smaller heroes might not be able to contest the point when standing next to this wall"
-            },
-            {
-              "position": { "x": 1180, "y": 980 },
-              "contestable": false,
-              "difficulty": 0,
-              "description": "Smaller heroes might not be able to contest the point when standing next to this wall"
-            }
-          ]
+        },
+        "height": {
+          "name": "Height",
+          "src": "height",
+          "height": 9.57
         }
       }
     }

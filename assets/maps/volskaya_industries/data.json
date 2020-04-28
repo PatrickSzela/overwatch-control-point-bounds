@@ -10,6 +10,11 @@
           "name": "Top view",
           "src": "top",
           "details": []
+        },
+        "height": {
+          "name": "Height",
+          "src": "height",
+          "height": 15.47
         }
       }
     },
@@ -53,6 +58,41 @@
           "name": "Front side",
           "src": "front",
           "details": []
+        },
+        "height": {
+          "name": "Height",
+          "src": "height",
+          "height": 8.7,
+          "details": [
+            {
+              "position": { "x": 960, "y": 1030 },
+              "contestable": false,
+              "difficulty": 0,
+              "description": "The height of the detection hitbox is much lower near these platforms, compared to the rest of the control point"
+            },
+            {
+              "position": { "x": 500, "y": 1030 },
+              "contestable": false,
+              "difficulty": 0
+            },
+            {
+              "position": { "x": 1450, "y": 1030 },
+              "contestable": false,
+              "difficulty": 0
+            },
+            {
+              "position": { "x": 580, "y": 800 },
+              "contestable": true,
+              "difficulty": 0,
+              "description": "You can contest the point from the flying platforms"
+            },
+            {
+              "position": { "x": 1290, "y": 550 },
+              "contestable": true,
+              "difficulty": 3,
+              "description": "It's possible to contest the point when standing on the edge of this wall"
+            }
+          ]
         }
       }
     }

@@ -40,6 +40,19 @@
               "description": "Smaller heroes might not be able to contest the point while standing next to this pillar"
             }
           ]
+        },
+        "height": {
+          "name": "Height",
+          "src": "height",
+          "height": 16.79,
+          "details": [
+            {
+              "position": { "x": 1270, "y": 950 },
+              "contestable": false,
+              "difficulty": 0,
+              "description": "It's impossible to contest the point from here"
+            }
+          ]
         }
       }
     },
@@ -62,6 +75,12 @@
               "contestable": false,
               "difficulty": 3,
               "description": "Small spot where smaller heroes might not be able to contest the point"
+            },
+            {
+              "position": { "x": 30, "y": 60 },
+              "contestable": false,
+              "difficulty": 0,
+              "description": "It's impossible to contest the point when standing on the platform above. Additionally, the height of detection hitbox near it is also lowered."
             }
           ]
         }

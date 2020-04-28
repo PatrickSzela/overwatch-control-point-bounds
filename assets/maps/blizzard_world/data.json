@@ -14,7 +14,26 @@
               "position": { "x": 960, "y": 120 },
               "contestable": true,
               "difficulty": 0,
-              "description": "It's possible to contest the point in every place under the roof"
+              "description": "It's possible to contest the point when standing under the roof, but the height under it is a little bit lowered"
+            }
+          ]
+        },
+        "height": {
+          "name": "Height",
+          "src": "height",
+          "height": 6,
+          "details": [
+            {
+              "position": { "x": 1460, "y": 600 },
+              "contestable": false,
+              "difficulty": 0,
+              "description": "You can't contest the point when touching this part of the roof, and the detection hitbox around it is lowered"
+            },
+            {
+              "position": { "x": 590, "y": 550 },
+              "contestable": false,
+              "difficulty": 0,
+              "description": "It's impossible to contest the point when standing on the hanging boat, and the detection hitbox around it is lowered"
             }
           ]
         }

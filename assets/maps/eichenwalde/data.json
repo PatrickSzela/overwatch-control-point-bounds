@@ -10,6 +10,11 @@
           "name": "Top view",
           "src": "top",
           "details": []
+        },
+        "height": {
+          "name": "Height",
+          "src": "height",
+          "height": 4.92
         }
       }
     }

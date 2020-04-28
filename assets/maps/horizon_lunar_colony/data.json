@@ -17,6 +17,11 @@
               "description": "Very small spot on which you can't contest the point"
             }
           ]
+        },
+        "height": {
+          "name": "Height",
+          "src": "height",
+          "height": 5.9
         }
       }
     },
@@ -28,6 +33,11 @@
           "name": "Top view",
           "src": "top",
           "details": []
+        },
+        "height": {
+          "name": "Height",
+          "src": "height",
+          "height": 9.75
         }
       }
     }

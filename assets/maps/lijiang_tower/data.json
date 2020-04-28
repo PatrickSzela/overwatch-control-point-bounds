@@ -2,32 +2,38 @@
   "name": "Lijiang Tower",
   "type": "control",
   "points": {
-    "control_center": {
-      "name": "Control Center",
-      "src": "control_center",
+    "night_market": {
+      "name": "Night Market",
+      "src": "night_market",
       "sides": {
         "top": {
           "name": "Top view",
           "src": "top",
           "details": [
             {
-              "position": { "x": 460, "y": 280 },
-              "contestable": true,
-              "difficulty": 2,
-              "description": "It's possible to contest the point when standing on this screen (check the Custom Game for precise bounds)"
+              "position": { "x": 460, "y": 880 },
+              "contestable": false,
+              "difficulty": 0,
+              "description": "Smaller heroes might not be able to contest the point when standing next to this wall, even though it's possible from the other side"
             },
             {
-              "position": { "x": 1460, "y": 280 },
-              "contestable": true,
-              "difficulty": 2,
-              "description": "It's possible to contest the point when standing on this screen (check the Custom Game for precise bounds)"
+              "position": { "x": 700, "y": 1040 },
+              "contestable": false,
+              "difficulty": 0,
+              "description": "It is not possible to contest the point from the windows above (the spot from Sym TP strat)"
             },
             {
-              "position": { "x": 960, "y": 435 },
-              "contestable": true,
-              "difficulty": 0
+              "position": { "x": 1200, "y": 1040 },
+              "contestable": false,
+              "difficulty": 0,
+              "description": "It is not possible to contest the point from the windows above (the spot from Sym TP strat)"
             }
           ]
+        },
+        "height": {
+          "name": "Height",
+          "src": "height",
+          "height": 14.17
         }
       }
     },
@@ -58,24 +64,45 @@
               "description": "You can contest the point from the when standing on the edge of the window (and it's harder from this side)"
             }
           ]
+        },
+        "height": {
+          "name": "Height",
+          "src": "height",
+          "height": 8.87
         }
       }
     },
-    "night_market": {
-      "name": "Night Market",
-      "src": "night_market",
+    "control_center": {
+      "name": "Control Center",
+      "src": "control_center",
       "sides": {
         "top": {
           "name": "Top view",
           "src": "top",
           "details": [
             {
-              "position": { "x": 460, "y": 880 },
-              "contestable": false,
-              "difficulty": 0,
-              "description": "Smaller heroes might not be able to contest the point when standing next to this wall, even though it's possible from the other side"
+              "position": { "x": 460, "y": 280 },
+              "contestable": true,
+              "difficulty": 2,
+              "description": "It's possible to contest the point when standing on this screen (check the Custom Game for precise bounds)"
+            },
+            {
+              "position": { "x": 1460, "y": 280 },
+              "contestable": true,
+              "difficulty": 2,
+              "description": "It's possible to contest the point when standing on this screen (check the Custom Game for precise bounds)"
+            },
+            {
+              "position": { "x": 960, "y": 435 },
+              "contestable": true,
+              "difficulty": 0
             }
           ]
+        },
+        "height": {
+          "name": "Height",
+          "src": "height",
+          "height": 10.68
         }
       }
     }

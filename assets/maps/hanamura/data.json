@@ -92,6 +92,37 @@
               "contestable": false,
               "difficulty": 0,
               "description": "Smaller heroes might not be able to contest the point when standing right next to these stairs (only from this side)"
+            },
+            {
+              "position": { "x": 990, "y": 20 },
+              "contestable": false,
+              "difficulty": 0,
+              "description": "It's not possible to contest the point when standing on the roof (or flying above it)"
+            }
+          ]
+        },
+        "height": {
+          "name": "Height",
+          "src": "height",
+          "height": 18.41,
+          "details": [
+            {
+              "position": { "x": 930, "y": 900 },
+              "contestable": false,
+              "difficulty": 0,
+              "description": "It's not possible to contest the point when standing on or flying above the roof. Additionally, the hitbox under it a little bit lowered."
+            },
+            {
+              "position": { "x": 630, "y": 950 },
+              "contestable": false,
+              "difficulty": 0,
+              "description": "Height of the control point is much lower right next to the roof"
+            },
+            {
+              "position": { "x": 1230, "y": 950 },
+              "contestable": false,
+              "difficulty": 0,
+              "description": "Height of the control point is much lower right next to the roof"
             }
           ]
         }

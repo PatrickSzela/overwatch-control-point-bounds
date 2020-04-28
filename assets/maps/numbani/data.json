@@ -41,6 +41,11 @@
               "description": "When standing right next to this wall it's impossible to contest the point"
             }
           ]
+        },
+        "height": {
+          "name": "Height",
+          "src": "height",
+          "height": 10.14
         }
       }
     }

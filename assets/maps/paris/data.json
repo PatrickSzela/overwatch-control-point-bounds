@@ -17,6 +17,11 @@
               "description": "It's possible to contest the point when standing on the edge of this sign (or on the bench)"
             }
           ]
+        },
+        "height": {
+          "name": "Height",
+          "src": "height",
+          "height": 5.81
         }
       }
     },
@@ -35,6 +40,11 @@
               "description": "It's possible to contest the point when standing on the pedestal of this statue"
             }
           ]
+        },
+        "height": {
+          "name": "Height",
+          "src": "height",
+          "height": 6.46
         }
       }
     }

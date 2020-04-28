@@ -23,6 +23,11 @@
               "description": "You can contest the point when standing on the hood of the car"
             }
           ]
+        },
+        "height": {
+          "name": "Height",
+          "src": "height",
+          "height": 9.90
         }
       }
     }

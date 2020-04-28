@@ -2,6 +2,38 @@
   "name": "Nepal",
   "type": "control",
   "points": {
+    "village": {
+      "name": "Village",
+      "src": "village",
+      "sides": {
+        "front": {
+          "name": "Front side",
+          "src": "front",
+          "details": []
+        },
+        "back": {
+          "name": "Back side",
+          "src": "back",
+          "details": []
+        }
+      }
+    },
+    "shrine": {
+      "name": "Shrine",
+      "src": "shrine",
+      "sides": {
+        "top": {
+          "name": "Top view",
+          "src": "top",
+          "details": []
+        },
+        "height": {
+          "name": "Height",
+          "src": "height",
+          "height": 9.29
+        }
+      }
+    },
     "sanctum": {
       "name": "Sanctum",
       "src": "sanctum",
@@ -23,33 +55,11 @@
               "description": "It's possible to contest the point when standing on this ledge"
             }
           ]
-        }
-      }
-    },
-    "shrine": {
-      "name": "Shrine",
-      "src": "shrine",
-      "sides": {
-        "top": {
-          "name": "Top view",
-          "src": "top",
-          "details": []
-        }
-      }
-    },
-    "village": {
-      "name": "Village",
-      "src": "village",
-      "sides": {
-        "front": {
-          "name": "Front side",
-          "src": "front",
-          "details": []
         },
-        "back": {
-          "name": "Back side",
-          "src": "back",
-          "details": []
+        "height": {
+          "name": "Height",
+          "src": "height",
+          "height": 9.25
         }
       }
     }
