@@ -21,6 +21,8 @@
                 boundaries you would like to compare (from MAPS menu in Custom Game settings) and start the game!
               </p>
 
+              <hr />
+
               <p>
                 <strong>Do event maps have the same boundaries as the non-event ones?</strong>
               </p>
@@ -29,34 +31,51 @@
                 limitations in the Workshop that prohibit me from doing it.
               </p>
 
+              <hr />
+
               <p>
-                <strong>Have you mapped height of these boundaries?</strong>
+                <strong>Have you also mapped the height of these boundaries?</strong>
               </p>
               <p>
-                Unfortunately no, mapping height of every control point's detection hitbox is almost impossible to do,
-                because on most maps these hitboxes are very complex and their height varies depending on checked
-                position.
+                Yes! I mean, kind of: mapping the exact boundaries of every control point in 3D space is almost
+                impossible to do, so basically I just added a purple orb which marks the height of the "main" part of
+                the hitbox, and with some new red orbs I've marked spots where the height of the rest of the hitbox is
+                lowered (so you can't contest the point from there).
               </p>
+
+              <hr />
+
+              <p>
+                <strong>These purple spheres are lower than they should be...</strong>
+              </p>
+              <p>
+                Well, actually they are not! The detection in Overwatch is based on the centered point on player's feet,
+                which makes the detection very consistent (or inconsistent, depending on how you look at it) - it
+                doesn't matter if you're a Wrecking Ball or Tracer, only the center of your mass (but on your feet) must
+                be on the point so you can contest it. It's a shame that the actual boundaries aren't very accurate...
+              </p>
+
+              <hr />
 
               <p>
                 <strong>What are these colorful spheres I can see on some maps?</strong>
               </p>
-              <p>
-                They mark some (more or less) interesting spots on which player can or can't contest the point:
-              </p>
               <ul>
-                <li>Green sphere - it's possible to contest the point</li>
-                <li>Red sphere - it's not possible to contest the point.</li>
+                <li>Purlple sphere - marks the height of the "main" part of detection hitbox.</li>
+                <li>Green sphere - spot where it's possible to contest the point</li>
+                <li>Red sphere - spot where it's not possible to contest the point.</li>
               </ul>
               <p>You can use the <nuxt-link to="/compare">Compare</nuxt-link> tool to learn more about them.</p>
 
+              <hr />
+
               <p>
-                <strong>I can't see the ingame boundaries of 2nd point in Assault mode!</strong>
+                <strong>I can't see the boundaries of 2nd point in Assault mode!</strong>
               </p>
               <p>
-                It's unfortunately a game limitation. To see these bounds, firstly you have to capture the 1st point
-                (just move yourself to Team 2, capture it and move back to Team 1). This also requires the game mode to
-                be started.
+                To see these bounds, you have to capture the 1st point (just move yourself to Team 2, capture it and
+                move back to Team 1). This also requires the game mode to be started (should start automatically by
+                default).
               </p>
             </m-card-secondary>
           </m-card>
@@ -74,6 +93,9 @@
                   and find some interesting stall spots! Don't forget that contesting the payload requires you to have a
                   line of sight with it.
                 </p>
+
+                <hr />
+
                 <p>
                   <strong>Can I disable that sphere?</strong>
                 </p>
@@ -124,7 +146,7 @@ export default Vue.extend({
   },
   data() {
     return {
-      customGameCode: 'CFKK0',
+      customGameCode: 'WNSY6',
       copyCustomGameCodeSuccedeed: false,
       copyCustomGameCodeFailed: false
     };

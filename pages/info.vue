@@ -40,6 +40,11 @@
                 ingame bounds are floating above the ground - so take them with a grain of salt.
               </p>
               <p>
+                Additionally, I've also managed to "map" the height of the detection hitboxes of control points! It's
+                not very accurate (because some hitboxes are very complex), so it's just a simple orb floating above,
+                but it can give you an idea how high these hitboxes are.
+              </p>
+              <p>
                 For anyone interested,
                 <a href="https://us.forums.blizzard.com/en/overwatch/t/control-point-bounds-are-very-inaccurate/424673"
                   >here</a
