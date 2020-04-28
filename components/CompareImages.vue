@@ -3,6 +3,7 @@
     <m-card ref="compareImages" class="compare-images" :class="{ 'compare-images--fullscreen': isFullscreenEnabled }">
       <div class="compare-images__inner">
         <vue-compare-image
+          v-if="!isOverlayImagesEnabled && leftImage && rightImage"
           :left-image="leftImage"
           :right-image="rightImage"
           left-image-alt="In-game bounds"
@@ -10,9 +11,19 @@
           :style="{ backgroundImage: 'url(' + background + ')' }"
           class="compare-images__vci"
           :class="{
-            'compare-images__vci--disabled': isOverlayImagesEnabled || loadingState === loadingStates.Failed
+            'compare-images__vci--disabled': loadingState === loadingStates.Failed
           }"
         ></vue-compare-image>
+
+        <div v-else class="compare-images__overlay-images" :style="{ backgroundImage: 'url(' + background + ')' }">
+          <div v-if="leftImage" class="left-image" :style="{ backgroundImage: 'url(' + leftImage + ')' }"></div>
+          <div v-if="rightImage" class="right-image" :style="{ backgroundImage: 'url(' + rightImage + ')' }"></div>
+          <div v-if="height" class="perpendicular-line"></div>
+        </div>
+
+        <div v-if="height" class="compare-images__info">
+          <h4>Height: {{ height }}m</h4>
+        </div>
 
         <div
           v-if="isDetailsOverlayEnabled && !isScreenTooSmall && loadingState === loadingStates.Finished"
@@ -38,7 +49,7 @@
             :description="activeDetail.description"
             :difficulty="activeDetail.difficulty"
             class="compare-images__detail-card"
-            :style="DetailsCardPosition"
+            :style="detailsCardPosition"
           ></details-card>
         </transition>
 
@@ -58,18 +69,42 @@
 
       <div class="compare-images__controls">
         <m-icon-button
-          v-for="(icon, key) in icons"
-          :key="key"
-          :value="getData(icon.model)"
-          :title="getData(icon.model) ? icon.labelOff : icon.labelOn"
-          :toggle-on-label="icon.labelOn"
-          :toggle-off-label="icon.labelOff"
-          :disabled="icon.disabled ? getData(icon.disabled) : false"
-          :ripple="false"
-          @change="setData(icon.model, $event)"
+          :value="isDetailsOverlayEnabled"
+          :title="isDetailsOverlayEnabled ? 'Enable details overlay' : 'Disable details overlay'"
+          toggle-on-label="Enable details overlay"
+          toggle-off-label="Disable details overlay"
+          :disabled="isScreenTooSmall || !details.length"
+          ripple="false"
+          @change="isDetailsOverlayEnabled = $event"
         >
-          <m-icon slot="toggleOn" :icon="icon.iconOn"></m-icon>
-          <m-icon slot="toggleOff" :icon="icon.iconOff"></m-icon>
+          <m-icon slot="toggleOn" icon="layers"></m-icon>
+          <m-icon slot="toggleOff" icon="layers_clear"></m-icon>
+        </m-icon-button>
+
+        <m-icon-button
+          :value="isOverlayImagesEnabled"
+          :title="isOverlayImagesEnabled ? 'Overlay images' : 'Compare images'"
+          toggle-on-label="Overlay images"
+          toggle-off-label="Compare images"
+          :disabled="!leftImage || !rightImage"
+          ripple="false"
+          @change="isOverlayImagesEnabled = $event"
+        >
+          <m-icon slot="toggleOn" icon="collections"></m-icon>
+          <m-icon slot="toggleOff" icon="compare"></m-icon>
+        </m-icon-button>
+
+        <m-icon-button
+          :value="isFullscreenEnabled"
+          :title="isFullscreenEnabled ? 'Enter fullscreen (F)' : 'Exit fullscreen (F)'"
+          toggle-on-label="Enter fullscreen (F)"
+          toggle-off-label="Exit fullscreen (F)"
+          :disabled="!isFullscreenSupported()"
+          ripple="false"
+          @change="isFullscreenEnabled = $event"
+        >
+          <m-icon slot="toggleOn" icon="fullscreen"></m-icon>
+          <m-icon slot="toggleOff" icon="fullscreen_exit"></m-icon>
         </m-icon-button>
       </div>
     </m-card>
@@ -100,11 +135,11 @@ export default Vue.extend({
   props: {
     leftImage: {
       type: String,
-      required: true
+      default: null
     },
     rightImage: {
       type: String,
-      required: true
+      default: null
     },
     background: {
       type: String,
@@ -113,6 +148,10 @@ export default Vue.extend({
     details: {
       type: Array as PropType<MapDetails[]>,
       default: () => []
+    },
+    height: {
+      type: Number,
+      default: 0
     }
   },
   data() {
@@ -123,35 +162,11 @@ export default Vue.extend({
       isScreenTooSmall: false,
       images: { left: new Image(), right: new Image(), background: new Image() },
       loadingState: LoadingStates.Loading,
-      activeDetail: null,
-      icons: {
-        layers: {
-          labelOn: 'Enable details overlay',
-          labelOff: 'Disable details overlay',
-          iconOn: 'layers',
-          iconOff: 'layers_clear',
-          model: 'isDetailsOverlayEnabled',
-          disabled: 'isScreenTooSmall'
-        },
-        overlay: {
-          labelOn: 'Overlay images',
-          labelOff: 'Compare images',
-          iconOn: 'collections',
-          iconOff: 'compare',
-          model: 'isOverlayImagesEnabled'
-        },
-        fullscreen: {
-          labelOn: 'Enter fullscreen (F)',
-          labelOff: 'Exit fullscreen (F)',
-          iconOn: 'fullscreen',
-          iconOff: 'fullscreen_exit',
-          model: 'isFullscreenEnabled'
-        }
-      }
+      activeDetail: null
     };
   },
   computed: {
-    DetailsCardPosition() {
+    detailsCardPosition() {
       const pos = { top: '', right: '', bottom: '', left: '' };
 
       if (this.activeDetail) {
@@ -189,13 +204,17 @@ export default Vue.extend({
     },
     leftImage: {
       handler(value: string) {
-        this.preload(value, ImageTypes.Left);
+        if (value) {
+          this.preload(value, ImageTypes.Left);
+        }
       },
       immediate: true
     },
     rightImage: {
       handler(value: string) {
-        this.preload(value, ImageTypes.Right);
+        if (value) {
+          this.preload(value, ImageTypes.Right);
+        }
       },
       immediate: true
     },
@@ -243,13 +262,12 @@ export default Vue.extend({
 
       this.activeDetail = null;
     },
-    getData(computedProperty: string) {
-      // @ts-ignore
-      return this[computedProperty];
-    },
-    setData(computedProperty: string, value: any) {
-      // @ts-ignore
-      this[computedProperty] = value;
+    isFullscreenSupported() {
+      // doc is type of any because TS doesn't like fullscreen prefixes
+      const doc: any = document;
+      return (
+        doc.fullscreenEnabled || doc.mozFullscreenEnabled || doc.webkitFullscreenEnabled || doc.msFullscreenEnabled
+      );
     },
     // elem is type of any because TS doesn't like fullscreen prefixes
     requestFullscreen(elem: any) {
@@ -269,15 +287,15 @@ export default Vue.extend({
       document.addEventListener('msfullscreenchange', this.onFullscreenChange);
 
       // eslint-disable-next-line no-undef
-      // Modernizr.deviceorientation seems to not get detected properly?
+      // Modernizr.deviceorientation seems to not being detected properly?
       if (window.screen.orientation) {
         window.screen.orientation.lock('landscape').catch(() => {
-          // do not throw error when it's not possible to change orientation because functionality is not supported on device
+          // do not throw an error when it's not possible to change orientation because functionality is not supported on device
         });
       }
     },
     exitFullscreen() {
-      // same as above
+      // doc is type of any because TS doesn't like fullscreen prefixes
       const doc: any = document;
       if (doc.exitFullscreen) {
         doc.exitFullscreen();
@@ -439,13 +457,17 @@ export default Vue.extend({
     }
   }
 
+  &__overlay-images,
   &__vci {
-    overflow: visible !important; // show handle outside of the container
     background-size: cover;
     background-position: center;
     background-color: inherit;
     padding-bottom: 9 / 16 * 100%;
     z-index: 1;
+  }
+
+  &__vci {
+    overflow: visible !important; // show handle outside of the container
 
     /deep/ .left-image,
     /deep/ .right-image {
@@ -459,25 +481,37 @@ export default Vue.extend({
 
     &--disabled {
       pointer-events: none;
-      padding-bottom: 9 / 16 * 100%;
+      padding-bottom: 9 / 16 * 100%; //vci uses img, so if image fails to load, it can shrink itself
+    }
+  }
 
-      /deep/ .vci-slider {
-        display: none;
-      }
+  &__overlay-images {
+    .left-image,
+    .right-image {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-size: cover;
+      background-position: center;
+    }
 
-      /deep/ .left-image,
-      /deep/ .right-image {
-        background: none;
-      }
+    .right-image {
+      opacity: 0.75;
+    }
+  }
 
-      /deep/ .left-image {
-        clip: initial !important;
-        z-index: -1;
-      }
+  &__info {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0px 10px;
+    max-width: 33%;
 
-      /deep/ .right-image {
-        opacity: 0.75;
-      }
+    h4 {
+      color: white;
+      text-shadow: 0 0 3px rgba(0, 0, 0, 0.75);
     }
   }
 
@@ -497,6 +531,18 @@ export default Vue.extend({
     &::after {
       z-index: -1 !important;
     }
+  }
+
+  .perpendicular-line {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    height: 1.5%;
+    background-color: #ed4fe9;
+    opacity: 0.5;
+    pointer-events: none;
   }
 }
 </style>

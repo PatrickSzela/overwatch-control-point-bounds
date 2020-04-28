@@ -70,15 +70,29 @@
           :right-image="rightImage"
           :background="background"
           :details="currentSide.details"
+          :height="currentSide.height"
         ></compare-images>
       </main>
 
       <footer>
         <div class="footer__content">
-          <p>
-            Please remember that images presented above are distored by camera's perspective. For even more accurate
-            bounds, check out <nuxt-link to="/custom_game">Custom Game</nuxt-link>.
-          </p>
+          <h4>Notes:</h4>
+          <ul>
+            <li>
+              Height of the control point is marked with a pink orb. Additionally I've added a pink line so it's easier
+              to compare its height to the rest of the map (camera is perpendicular to the ceiling of the detection
+              hitbox). Please remember that the boundaries from the top-down view also apply here (but are much
+              simpler)!
+            </li>
+            <li>
+              If map has no "Height" option it means that its detection hitbox is as high as the skybox or it touches
+              the ceiling.
+            </li>
+            <li>
+              Please remember that images presented above are distored by camera's perspective. For even more accurate
+              bounds, check out <nuxt-link to="/custom_game">Custom Game</nuxt-link>.
+            </li>
+          </ul>
         </div>
       </footer>
 
@@ -183,11 +197,15 @@ export default Vue.extend({
       this.$router.push({ path: this.$route.path, query: { map, point, side } });
     },
     image(filename: string, webpAlpha: boolean = false): string {
-      // eslint-disable-next-line no-undef
-      if (webpAlpha ? Modernizr.webpalpha : Modernizr.webp) {
-        return require('~/assets/maps/' + this.src + filename + '.png?webp');
-      } else {
-        return require('~/assets/maps/' + this.src + filename + '.png');
+      try {
+        // eslint-disable-next-line no-undef
+        if (webpAlpha ? Modernizr.webpalpha : Modernizr.webp) {
+          return require('~/assets/maps/' + this.src + filename + '.png?webp');
+        } else {
+          return require('~/assets/maps/' + this.src + filename + '.png');
+        }
+      } catch (e) {
+        return '';
       }
     }
   },
@@ -283,10 +301,24 @@ footer {
       }
     }
 
-    p {
+    p,
+    li {
       @include mdc-typography('caption');
       font-size: 0.875em;
-      text-align: center;
+      //text-align: center;
+      margin: 0.5em 0;
+    }
+
+    > *:first-child {
+      margin-top: 0;
+    }
+
+    > *:last-child {
+      margin-bottom: 0;
+    }
+
+    ul {
+      margin-top: 0;
     }
   }
 }

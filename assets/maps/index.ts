@@ -8,6 +8,7 @@ export interface MapDetails {
 export interface MapSide {
   name: string;
   src: string;
+  height?: number;
   details?: Array<MapDetails>;
 }
 
