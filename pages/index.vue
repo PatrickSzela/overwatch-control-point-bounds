@@ -14,6 +14,25 @@
             </m-card>
           </nuxt-link>
         </m-layout-grid-cell>
+
+        <m-layout-grid-cell v-if="changelog.length > 0" :span="12">
+          <m-card class="mdc-card--layout-gutter changelog">
+            <m-card-primary title="Changelog" aria-hidden="true"></m-card-primary>
+
+            <m-card-secondary>
+              <div v-for="(log, index) in changelog" :key="log.date" class="log">
+                <hr v-if="index > 0" />
+
+                <h5>{{ log.date }}</h5>
+                <ul>
+                  <li v-for="change in log.changes" :key="change">
+                    {{ change }}
+                  </li>
+                </ul>
+              </div>
+            </m-card-secondary>
+          </m-card>
+        </m-layout-grid-cell>
       </m-layout-grid-inner>
     </m-layout-grid>
   </client-only>
@@ -47,6 +66,18 @@ export default Vue.extend({
           link: '/info',
           color: '#00994c'
         }
+      ],
+      changelog: [
+        {
+          date: '2020-04-29',
+          changes: [
+            'All: added (good enough™) representation of height of control point boundaries (3rd drop-down on top of the page, read notes to learn more)',
+            'All: added some more contestable and noncontestable spots',
+            'Hollywood: updated boundaries from patch 1.47.0.0',
+            'Updated Custom Game code in Custom Game page',
+            'Other small changes'
+          ]
+        }
       ]
     };
   }
@@ -59,15 +90,15 @@ export default Vue.extend({
 @import '@material/layout-grid/_mixins';
 @import '@material/typography/_mixins';
 
-.mdc-card {
+.mdc-card__interactive-container {
+  height: 100%;
+}
+
+.mdc-card--interactive {
   text-align: center;
   height: 100%;
 
-  &__interactive-container {
-    height: 100%;
-  }
-
-  &__primary {
+  .mdc-card__primary {
     padding-left: 24px !important;
     padding-right: 24px !important;
 
@@ -77,7 +108,7 @@ export default Vue.extend({
     }
   }
 
-  /deep/ &__title {
+  /deep/ .mdc-card__title {
     @include text-primary-centered;
     padding-bottom: 8px;
 
@@ -90,7 +121,7 @@ export default Vue.extend({
     }
   }
 
-  &__media {
+  .mdc-card__media {
     @include webp('~assets/images/sunburst.png');
 
     /deep/ &-content {
@@ -110,6 +141,23 @@ export default Vue.extend({
       &::before {
         margin-bottom: 9 / 21 * 100%;
       }
+    }
+  }
+}
+
+.changelog {
+  .mdc-card__secondary {
+    max-height: 250px;
+    overflow: auto;
+  }
+
+  .log {
+    &:first-child > *:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child > *:last-child {
+      margin-bottom: 0;
     }
   }
 }
