@@ -29,13 +29,13 @@ export interface Map {
   points: { [index: string]: MapPoint };
 }
 
-const maps_imported: __WebpackModuleApi.RequireContext = require.context('./', true, /\.json$/);
+const mapsImported: __WebpackModuleApi.RequireContext = require.context('./', true, /\.json$/);
 const maps: { [index: string]: Map } = {};
 export const filteredMaps: { [index in MapTypes]: Map } = Object.create(MapTypes);
 
-maps_imported
+mapsImported
   .keys()
-  .forEach((key) => (maps[key.replace('./', '').replace('/data.json', '')] = maps_imported(key) as Map));
+  .forEach((key) => (maps[key.replace('./', '').replace('/data.json', '')] = mapsImported(key) as Map));
 
 Object.keys(maps).forEach((key) => {
   filteredMaps[maps[key].type] = { ...filteredMaps[maps[key].type], ...{ [key]: maps[key] } };
