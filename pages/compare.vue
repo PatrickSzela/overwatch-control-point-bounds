@@ -85,8 +85,8 @@
             <li>
               Height of the control point is marked with a pink orb. Additionally I've added a pink line so it's easier
               to compare its height to the rest of the map (camera is perpendicular to the ceiling of the detection
-              hitbox). Please remember that the boundaries from the top-down view also apply here (but are much
-              simpler)!
+              hitbox). Please note that the boundaries from the top-down view also apply here (but aren't as
+              "advanced")!
             </li>
             <li>
               Please remember that images presented above are distored by camera's perspective. For even more accurate
