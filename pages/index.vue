@@ -148,7 +148,20 @@ export default Vue.extend({
 .changelog {
   .mdc-card__secondary {
     max-height: 250px;
-    overflow: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    // Firefox and others, why 😢 https://bugzilla.mozilla.org/show_bug.cgi?id=748518
+    padding-bottom: 0;
+    @each $size in map-keys($mdc-layout-grid-columns) {
+      @include mdc-layout-grid-media-query_($size) {
+        &::after {
+          content: '';
+          height: map-get($mdc-layout-grid-default-gutter, $size);
+          display: block;
+        }
+      }
+    }
   }
 
   .log {
