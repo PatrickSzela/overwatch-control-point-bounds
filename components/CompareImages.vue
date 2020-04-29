@@ -70,7 +70,7 @@
       <div class="compare-images__controls">
         <m-icon-button
           :value="isDetailsOverlayEnabled"
-          :title="isDetailsOverlayEnabled ? 'Enable details overlay' : 'Disable details overlay'"
+          :title="isDetailsOverlayEnabled ? 'Disable details overlay' : 'Enable details overlay'"
           toggle-on-label="Enable details overlay"
           toggle-off-label="Disable details overlay"
           :disabled="isScreenTooSmall || !details.length"
@@ -83,7 +83,7 @@
 
         <m-icon-button
           :value="isOverlayImagesEnabled"
-          :title="isOverlayImagesEnabled ? 'Overlay images' : 'Compare images'"
+          :title="isOverlayImagesEnabled ? 'Compare images' : 'Overlay images'"
           toggle-on-label="Overlay images"
           toggle-off-label="Compare images"
           :disabled="!leftImage || !rightImage"
@@ -96,7 +96,7 @@
 
         <m-icon-button
           :value="isFullscreenEnabled"
-          :title="isFullscreenEnabled ? 'Enter fullscreen (F)' : 'Exit fullscreen (F)'"
+          :title="isFullscreenEnabled ? 'Exit fullscreen (F)' : 'Enter fullscreen (F)'"
           toggle-on-label="Enter fullscreen (F)"
           toggle-off-label="Exit fullscreen (F)"
           :disabled="!isFullscreenSupported()"
