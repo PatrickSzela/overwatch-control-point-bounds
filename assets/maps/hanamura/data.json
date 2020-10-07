@@ -104,22 +104,22 @@
         "height": {
           "name": "Height",
           "src": "height",
-          "height": 18.41,
+          "height": 12.38,
           "details": [
             {
-              "position": { "x": 930, "y": 900 },
+              "position": { "x": 960, "y": 640 },
               "contestable": false,
               "difficulty": 0,
               "description": "It's not possible to contest the point when standing on or flying above the roof. Additionally, the hitbox under it a little bit lowered."
             },
             {
-              "position": { "x": 630, "y": 950 },
+              "position": { "x": 650, "y": 740 },
               "contestable": false,
               "difficulty": 0,
               "description": "Height of the control point is much lower right next to the roof"
             },
             {
-              "position": { "x": 1230, "y": 950 },
+              "position": { "x": 1250, "y": 740 },
               "contestable": false,
               "difficulty": 0,
               "description": "Height of the control point is much lower right next to the roof"

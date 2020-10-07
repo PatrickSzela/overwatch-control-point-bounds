@@ -69,6 +69,13 @@ export default Vue.extend({
       ],
       changelog: [
         {
+          date: '2020-10-07',
+          changes: [
+            'Hanamura (2nd point): updated the height of the boundaries (lowered from 18.41M to 12.38M)',
+            'All: some (very) minor changes to heights of the boundaries on Busan, Eichenwalde, Nepal, Paris and Volskaya Industries'
+          ]
+        },
+        {
           date: '2020-04-29',
           changes: [
             'All: added (good enough™) representation of height of control point boundaries (3rd drop-down on top of the page, read notes to learn more)',
