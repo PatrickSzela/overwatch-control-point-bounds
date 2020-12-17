@@ -44,10 +44,16 @@
         "height": {
           "name": "Height",
           "src": "height",
-          "height": 16.79,
+          "height": 8.79,
           "details": [
             {
-              "position": { "x": 1270, "y": 950 },
+              "position": { "x": 1480, "y": 560 },
+              "contestable": false,
+              "difficulty": 0,
+              "description": "It's impossible to contest the point from here"
+            },
+            {
+              "position": { "x": 500, "y": 510 },
               "contestable": false,
               "difficulty": 0,
               "description": "It's impossible to contest the point from here"

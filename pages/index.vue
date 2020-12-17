@@ -69,6 +69,10 @@ export default Vue.extend({
       ],
       changelog: [
         {
+          date: '2020-12-17',
+          changes: ['Temple of Anubis (1st point): updated the height of the boundaries (lowered from 16.79M to 8.79M)']
+        },
+        {
           date: '2020-10-07',
           changes: [
             'Hanamura (2nd point): updated the height of the boundaries (lowered from 18.41M to 12.38M)',
